@@ -11,6 +11,9 @@ $(function(){
         }, 500);
     });
 
+    /**
+     * Menu Click Event
+     */
     $('ul.toc > li > a').click(function(e) {
 
         const $menuList = $('ul.toc > li');
@@ -21,9 +24,12 @@ $(function(){
            if($item.hasClass('active')) {
                $item.removeClass('active');
            }
-           console.log($anchor.parent());
-
         });
+
+        //Click a > li class Setting
+        if(!$anchor.parent().hasClass('active')) {
+            $anchor.parent().addClass('active');
+        }
 
     });
 })
