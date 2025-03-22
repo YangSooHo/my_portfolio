@@ -55,7 +55,8 @@ body {
 /* Area */
 
 section.info-area {
-    height: 50rem;
+    /*height: 50rem;*/
+    height: 1280px;
 }
 
 header > .menu-div > nav > ul.toc {
@@ -233,9 +234,42 @@ section#home > .sub-profile > .sub-profile-block > .sub-profile-grid > .sub-prof
     padding-top: 15rem;
 }
 
+section.wrap-info {
+    background: #ffe499;
+
+    overflow: auto;
+    scroll-snap-type: y mandatory; /* y 축 방향으로만 scroll snap 적용 */
+}
+
 section.wrap-info > section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    scroll-snap-align: start;
+}
+
+section.wrap-info > section#skills {
+    background-image: url("/images/background/skills.png");
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+
+section.wrap-info > section#experience {
+    background-image: url("/images/background/experience.png");
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+
+section.wrap-info > section#projects {
+    background-image: url("/images/background/projects.png");
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+
+section.wrap-info > section#reference {
+    background-image: url("/images/background/reference.png");
+    background-repeat : no-repeat;
+    background-size : cover;
 }
