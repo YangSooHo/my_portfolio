@@ -162,14 +162,69 @@ section#home > .sub-profile > .sub-profile-block {
     padding: 1rem;
     border: 5px solid #edc290;
     flex: 1;
+    max-width: 50%;
     display: flex;
-    justify-content: start;
-    align-items: start;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+section#home > .sub-profile > .sub-profile-block > .sub-profile-picture {
+    border-radius: 15px;
+    border: 5px solid black;
+    height: 15rem;
+    width: 180px;
 }
 
 section#home > .sub-profile > .sub-profile-block > .sub-profile-title-block {
     font-weight: bold;
     font-size: 40px;
+}
+
+section#home > .sub-profile > .sub-profile-block > .sub-profile-content{
+    flex: 1;
+    justify-content: start;
+    align-items: start;
+    text-align: left;
+}
+
+section#home > .sub-profile > .sub-profile-block > .sub-profile-content > .profile-table {
+    width: 100%;
+    height: 15rem;
+}
+
+section#home > .sub-profile > .sub-profile-block > .sub-profile-content > .profile-table th,
+section#home > .sub-profile > .sub-profile-block > .sub-profile-content > .profile-table td {
+    text-align: left;
+    font-size: 24px;
+}
+
+section#home > .sub-profile > .sub-profile-block > .sub-profile-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+section#home > .sub-profile > .sub-profile-block > .sub-profile-grid h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+section#home > .sub-profile > .sub-profile-block > .sub-profile-grid > .sub-profile-grid-block {
+    flex: 1;
+    min-width: 15rem;
+    height: 20rem;
+    padding: 0.5rem;
+    border: 5px dashed #f1a42f;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.truncated-text {
+    overflow: auto;
+    text-overflow: ellipsis;
+    word-break: break-all;
 }
 
 .wrap-container {
