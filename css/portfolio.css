@@ -236,18 +236,15 @@ section#home > .sub-profile > .sub-profile-block > .sub-profile-grid > .sub-prof
 
 section.wrap-info {
     background: #ffe499;
-
-    overflow: auto;
-    scroll-snap-type: y mandatory; /* y 축 방향으로만 scroll snap 적용 */
+    position: relative;
+    transition: 0.5s;
 }
 
-section.wrap-info > section {
+section.wrap-info > section.info-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    scroll-snap-align: start;
 }
 
 section.wrap-info > section#skills {
@@ -272,4 +269,19 @@ section.wrap-info > section#reference {
     background-image: url("/images/background/reference.png");
     background-repeat : no-repeat;
     background-size : cover;
+}
+
+/* Responsive Setting */
+@media screen and (max-width: 2420px) {
+    section#home > .sub-profile {
+        flex-direction: column !important;
+    }
+
+    section#home > .sub-profile > .sub-profile-block {
+        max-width: 100% !important;
+    }
+
+    section#home {
+        height: 100%;
+    }
 }
