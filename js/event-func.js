@@ -14,6 +14,14 @@ $(function(){
     /**
      * Menu Click Event
      */
+    const home = document.querySelector("#home");
+    const sections = document.querySelectorAll(".wrap-info .info-area");
+    const wrapInfo = document.querySelector(".wrap-info");
+    const infoAreaBlock = document.querySelector(".info-area > .info-area-block");
+
+    let currentIndex = 0;
+    let isScrolling = false;
+
     $('ul.toc > li > a').click(function(e) {
 
         const $menuList = $('ul.toc > li');
@@ -31,25 +39,55 @@ $(function(){
             $anchor.parent().addClass('active');
         }
 
+        //index Setting
+        currentIndex = $(this).data('idx');
+
     });
 
-    const sections = document.querySelectorAll(".wrap-info .info-area");
-    const wrapInfo = document.querySelector(".wrap-info");
-    let currentIndex = 0;
-    let isScrolling = false;
+    function activeSetting(index) {
+        const $menuList = $('ul.toc > li');
+
+        //Active Setting
+        $.each($menuList, function (idx, item) {
+            const $item = $(item);
+            if($item.hasClass('active')) {
+                $item.removeClass('active');
+            }
+        });
+
+        //Click a > li class Setting
+        const toc = ['#toc-skills', '#toc-experience', '#toc-projects', '#toc-reference'];
+
+        if (index < 0 && !$('#toc-home').hasClass('active')) {
+            $('#toc-home').addClass('active');
+        } else if(!$(toc[index]).hasClass('active')) {
+            $(toc[index]).addClass('active');
+        }
+    }
 
     function scrollToSection(index) {
-        console.log(index);
-        if (index < 0 || index >= sections.length || isScrolling) return;
+        if (index >= sections.length || isScrolling) return;
 
         isScrolling = true;
-        sections[index].scrollIntoView({ behavior: "smooth" });
 
+        if (index < 0) { home.scrollIntoView({behavior: "smooth"}); }
+        else { sections[index].scrollIntoView({ behavior: "smooth" }); }
+
+        activeSetting(index);
         setTimeout(() => {
             currentIndex = index;
             isScrolling = false;
         }, 800); // 스크롤 완료 후 대기
     }
+
+
+    infoAreaBlock.addEventListener("wheel", function (event) {
+        const target = event.currentTarget;
+        // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
+        if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+            event.stopPropagation();
+        }
+    })
 
     // 마우스 휠 이벤트 (데스크탑)
     wrapInfo.addEventListener("wheel", function (event) {

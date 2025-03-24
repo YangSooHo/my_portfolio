@@ -39,15 +39,14 @@
 
 ## **Skills**
 > 1. Backend [Java / Spring Boot]
-> 2. Frontend [ReactJS / Javascript]
-> 3. Template [JSP / Apache Freemarker / Thymeleaf / CSS / SASS / SCSS]
-> 4. SQL [MS-SQL / MySQL / MongoDB]
-> 5. CI/CD [Jenkins]
-> 6. Server [Apache Tomcat / NginX / MS Azure]
-> 7. OS [Linux / Windows Server]
-> 8. Collaboration [Git / Docker]
-> 9. JIRA [Redmine / Notion / Atlassian]
-> 10. Tools [IntelliJ / VSCode / Eclipse / Figma]
+> 2. Frontend [ReactJS / Javascript / JSP / Apache Freemarker / Thymeleaf / CSS / SASS / SCSS]
+> 3. SQL [MS-SQL / MySQL / MongoDB / H2 Database]
+> 4. CI/CD [Jenkins]
+> 5. Server [Apache Tomcat / NginX / MS Azure]
+> 6. OS [Linux / Windows]
+> 7. Collaboration [Git / Docker]
+> 8. JIRA [Redmine / Notion / Atlassian]
+> 9. Tools [IntelliJ / VSCode / Eclipse / Figma]
 
 ## **Projects**
 > 1. GM AVN 관련 자동화 테스트 개발 [2017-03-10 - 2019-05-31]

@@ -1,0 +1,20 @@
+/* Responsive Setting */
+@media screen and (max-device-width: 900px) {
+    section.info-area {
+        height: 100vh !important;
+    }
+}
+
+@media screen and (max-device-width: 2520px) {
+    section#home > .sub-profile {
+        flex-direction: column !important;
+    }
+
+    section#home > .sub-profile > .sub-profile-block {
+        max-width: 100% !important;
+    }
+
+    section#home {
+        height: 100%;
+    }
+}

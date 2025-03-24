@@ -19,12 +19,11 @@
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 
-
+  <!-- Google Font - Nanum Gothic & Outfit & Open Sans * Lora-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Nanum Gothic & Outfit & Open Sans * Lora-->
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nanum+Gothic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- JQuery  -->
@@ -121,11 +120,11 @@
       <div class="menu-div">
         <nav>
           <ul class="toc">
-            <li class="active"><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#reference">Reference</a></li>
+            <li id="toc-home" class="active"><a href="#home">Home</a></li>
+            <li id="toc-skills"><a href="#skills" data-idx="0">Skills</a></li>
+            <li id="toc-experience"><a href="#experience" data-idx="1">Experience</a></li>
+            <li id="toc-projects"><a href="#projects" data-idx="2">Projects</a></li>
+            <li id="toc-reference"><a href="#reference" data-idx="3">Reference</a></li>
           </ul>
         </nav>
       </div>
@@ -133,32 +132,646 @@
 
     <section class="wrap-info">
       <section id="skills" class="info-area">
-        <div>
-          Skills
+        <div class="info-area-block">
+          <fieldset class="info-area-detail-block">
+            <legend class="info-area-title-block">Back-End</legend>
+            <div class="skill-detail">
+              <table class="table table-bordered">
+                <tr>
+                  <th>Java</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-8">8</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Spring Boot</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-9">9</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Python</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-5">5</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+          <fieldset class="info-area-detail-block">
+            <legend class="info-area-title-block">Front-End</legend>
+            <div class="skill-detail">
+            <table class="table table-bordered">
+              <tr>
+                <th>CSS / SASS / SCSS</th>
+                <td>
+                  <div class="level-container">
+                    <div class="level-bar level-8">8</div>
+                    <div class="level-marker">
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Javascript</th>
+                <td>
+                  <div class="level-container">
+                    <div class="level-bar level-10">10</div>
+                    <div class="level-marker">
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>JSP</th>
+                <td>
+                  <div class="level-container">
+                    <div class="level-bar level-6">6</div>
+                    <div class="level-marker">
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Apache Freemarker</th>
+                <td>
+                  <div class="level-container">
+                    <div class="level-bar level-5">5</div>
+                    <div class="level-marker">
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Thymeleaf</th>
+                <td>
+                  <div class="level-container">
+                    <div class="level-bar level-10">10</div>
+                    <div class="level-marker">
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>ReactJS</th>
+                <td>
+                  <div class="level-container">
+                    <div class="level-bar level-9">9</div>
+                    <div class="level-marker">
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                      <div class="marker"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            </div>
+          </fieldset>
+          <fieldset class="info-area-detail-block">
+            <legend class="info-area-title-block">Database</legend>
+            <div class="skill-detail">
+              <table class="table table-bordered">
+                <tr>
+                  <th>MS-SQL</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-8">8</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>MySQL</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-6">6</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>MongoDB</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-8">8</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>H2 Database</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-7">7</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+          <fieldset class="info-area-detail-block">
+            <legend class="info-area-title-block">Server</legend>
+            <div class="skill-detail">
+              <table class="table table-bordered">
+                <tr>
+                  <th class="lora" colspan="2" style="text-align: center;">WAS (Web Application Server)</th>
+                </tr>
+                <tr>
+                  <th>Apache Tomcat</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-9">9</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="lora" colspan="2" style="text-align: center;">Cache Server</th>
+                </tr>
+                <tr>
+                  <th>Redis Server</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-8">8</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="lora" colspan="2" style="text-align: center;">Web Server</th>
+                </tr>
+                <tr>
+                  <th>NginX</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-10">10</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="lora" colspan="2" style="text-align: center;">Cloud Server</th>
+                </tr>
+                <tr>
+                  <th>MS Azure</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-6">6</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+          <fieldset class="info-area-detail-block">
+            <legend class="info-area-title-block">Others</legend>
+            <div class="skill-detail">
+              <table class="table table-bordered">
+                <tr>
+                  <th class="lora" colspan="2" style="text-align: center;">Collaboration</th>
+                </tr>
+                <tr>
+                  <th>Git</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-9">9</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Docker</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-6">6</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="lora" colspan="2" style="text-align: center;">JIRA</th>
+                </tr>
+                <tr>
+                  <th>Redmine</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-7">7</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Atlassian</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-7">7</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Notion</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-7">7</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="lora" colspan="2" style="text-align: center;">Tools</th>
+                </tr>
+                <tr>
+                  <th>IntelliJ</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-9">9</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>VSCode</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-7">7</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Eclipse</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-7">7</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Figma</th>
+                  <td>
+                    <div class="level-container">
+                      <div class="level-bar level-8">8</div>
+                      <div class="level-marker">
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                        <div class="marker"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
         </div>
       </section>
 
       <hr>
 
       <section id="experience" class="info-area">
-        Experience
+        <div class="info-area-block">
+          Experience
+        </div>
       </section>
 
       <hr>
 
       <section id="projects" class="info-area">
-        Projects
+        <div class="info-area-block">
+          Projects
+        </div>
       </section>
 
       <hr>
 
       <section id="reference" class="info-area">
-        Reference
+        <div class="info-area-block">
+          Reference
+        </div>
       </section>
     </section>
 
     <footer>
-      Footer
+      <div class="footer-block">
+        <div class="footer-text">
+          © 2025 Copyright YANG SOOHO
+        </div>
+        <div class="footer-reference">
+          <img src="images/license/logo-jquery.png" alt="JQuery logo" width="64px" />&nbsp;
+        </div>
+      </div>
     </footer>
   </div>
 </body>
