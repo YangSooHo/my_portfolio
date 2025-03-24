@@ -39,7 +39,6 @@ $(function(){
     let isScrolling = false;
 
     function scrollToSection(index) {
-
         console.log(index);
         if (index < 0 || index >= sections.length || isScrolling) return;
 
