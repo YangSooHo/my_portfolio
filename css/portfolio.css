@@ -350,7 +350,7 @@ section.wrap-info > section.info-area > .info-area-block {
 }
 
 section.wrap-info > section#skills {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/skills.png");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/skills.png?raw=true");
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -443,19 +443,19 @@ section.wrap-info > section#skills table td {
 
 
 section.wrap-info > section#experience {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/experience.png");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/experience.png?raw=true");
     background-position: center center;
     background-repeat : no-repeat;
 }
 
 section.wrap-info > section#projects {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/projects.png");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/projects.png?raw=true");
     background-position: center center;
     background-repeat : no-repeat;
 }
 
 section.wrap-info > section#reference {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/reference.png");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/reference.png?raw=true");
     background-position: center center;
     background-repeat : no-repeat;
 }
