@@ -143,6 +143,8 @@ $(function(){
     const totalSteps = steps.length;
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
+    const firstBtn = document.getElementById("firstBtn");
+    const lastBtn = document.getElementById("lastBtn");
 
     function updateSteps() {
         steps.forEach((step, index) => {
@@ -158,8 +160,12 @@ $(function(){
         });
 
         prevBtn.disabled = currentStep === 0;
+        firstBtn.disabled = currentStep === 0;
         nextBtn.disabled = currentStep === totalSteps - 1;
+        lastBtn.disabled = currentStep === totalSteps - 1;
     }
+
+
 
     nextBtn.addEventListener("click", function () {
         if (currentStep < totalSteps - 1) {
@@ -171,6 +177,20 @@ $(function(){
     prevBtn.addEventListener("click", function () {
         if (currentStep > 0) {
             currentStep--;
+            updateSteps();
+        }
+    });
+
+    firstBtn.addEventListener("click", function () {
+        if (currentStep > 0) {
+            currentStep = 0;
+            updateSteps();
+        }
+    });
+
+    lastBtn.addEventListener("click", function () {
+        if (currentStep < totalSteps - 1) {
+            currentStep = totalSteps - 1;
             updateSteps();
         }
     });

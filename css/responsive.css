@@ -17,6 +17,38 @@
     section.wrap-info > section#experience .info-area-list-container .info-area-list-content-item {
         font-size: 11px;
     }
+
+    section.wrap-info > section#experience .info-area-list-container {
+        border-width: 0 0 3px 0;
+        padding-top: 0;
+        width: 100%;
+    }
+
+    section.wrap-info > section#experience .info-area-list-container:first-child {
+        border-width: 3px 0 3px 0;
+        padding-top: 1rem;
+    }
+
+    section.wrap-info > section#experience .info-area-block {
+        flex-flow: column wrap !important;
+        width: 75vw
+    }
+
+    section.wrap-info > section#projects .step-project > .step-project-content {
+        display:flex;
+        flex-flow: column wrap;
+        gap: 1.5rem;
+    }
+
+    section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture {
+        flex: 1;
+        border: 5px dashed var(--main-area-border);
+    }
+
+    section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail {
+        flex: 2;
+        border: 5px dashed var(--main-area-border);
+    }
 }
 
 @media screen and (max-device-width: 2520px) {
