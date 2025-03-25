@@ -49,6 +49,14 @@
         flex: 2;
         border: 5px dashed var(--main-area-border);
     }
+
+    section.wrap-info > section#projects .step-project > .step-project-title {
+        font-size: 24px !important;
+    }
+
+    section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture img {
+        width: 75% !important;
+    }
 }
 
 @media screen and (max-device-width: 2520px) {

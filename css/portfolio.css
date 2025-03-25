@@ -118,6 +118,13 @@ body {
     border-width: 0 2px;
 }
 
+.table-borderless > :not(caption) > * {
+    border-width: 0 0;
+}
+.table-borderless > :not(caption) > * > * {
+    border-width: 0 0;
+}
+
 table {
     caption-side: bottom;
     border-collapse: collapse;
@@ -600,6 +607,8 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     flex: 1;
     height: 97%;
     border: 5px dashed var(--main-area-border);
+    display: flex;
+    flex-flow: row wrap;
 }
 
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail {
@@ -621,23 +630,28 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     border: 5px dashed var(--main-area-border);
     margin: 1rem;
     flex: 1;
+    white-space: pre-line;
     padding: 0.5rem;
 }
 
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-libraries:before {
-    content: "Libraries";
+    content: "Details";
     font-size: 24px;
     font-weight: bold;
-    display:inline-block;
+    display: inline-block;
     width: 100%;
 }
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-libraries {
     border: 5px dashed var(--main-area-border);
-    flex: 1;
     margin: 1rem;
+    flex: 1;
+    white-space: pre-line;
     padding: 0.5rem;
 }
 
+section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture img {
+    width: 100%;
+}
 
 section.wrap-info > section#reference {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/reference.png?raw=true");
