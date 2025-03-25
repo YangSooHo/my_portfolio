@@ -3,6 +3,20 @@
     section.info-area {
         height: 100vh !important;
     }
+
+    section.wrap-info > section#experience .info-area-list-container > .list-container-title {
+        font-size: 21px;
+        font-weight: bold;
+    }
+
+    section.wrap-info > section#experience .info-area-list-container .info-area-list-detail-title {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    section.wrap-info > section#experience .info-area-list-container .info-area-list-content-item {
+        font-size: 11px;
+    }
 }
 
 @media screen and (max-device-width: 2520px) {
