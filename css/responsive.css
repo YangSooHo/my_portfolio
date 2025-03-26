@@ -1,7 +1,7 @@
 /* Responsive Setting */
 @media screen and (max-device-width: 900px) {
     section.info-area {
-        height: 100vmax !important;
+        height: 100svh !important;
     }
 
     section.wrap-info > section#experience .info-area-list-container > .list-container-title {
