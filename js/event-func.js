@@ -68,7 +68,7 @@ $(function(){
 
 
     // Scroll 설정 [PC에서만 동작]
-    if (/Android|iPhone/i.test(navigator.userAgent) === false) {
+    // if (/Android|iPhone/i.test(navigator.userAgent) === false) {
         function scrollToSection(index) {
             if (index >= sections.length || isScrolling) return;
 
@@ -179,7 +179,7 @@ $(function(){
                 scrollToSection(currentIndex); // 제자리로 이동
             }
         });
-    }
+    // }
 
     //Wizard Event
     let currentStep = 0;
