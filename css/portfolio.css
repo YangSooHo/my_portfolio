@@ -26,8 +26,6 @@
     --black-color: #000000;
 
     --skill-level-color: #F1A42FA5;
-
-    --vh: 1vh;
 }
 
 header {
@@ -387,7 +385,7 @@ section.wrap-info > section.info-area {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(var(--vh, 1vh) * 100);;
+    height: 100vh;
     background-color: var(--info-area-bg-color);
 }
 
@@ -397,7 +395,7 @@ section.wrap-info > section.info-area > .info-area-block {
     padding: 1rem;
     margin-top: 7.5rem;
     width: 80vw;
-    height: calc(150vw - 17.5rem);
+    height: 75svh;
 
     display: inline-flex;
     flex-flow: row wrap;
