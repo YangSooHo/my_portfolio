@@ -30,13 +30,15 @@
     }
 
     section.wrap-info > section#experience .info-area-block {
-        flex-flow: column wrap !important;
+        flex-flow: column nowrap !important;
+        overflow: auto;
         width: 75vw
     }
 
     section.wrap-info > section#projects .step-project > .step-project-content {
         display:flex;
-        flex-flow: column wrap;
+        flex-flow: column nowrap;
+        overflow: auto;
         gap: 1.5rem;
     }
 

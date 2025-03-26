@@ -613,7 +613,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     height: 97%;
     border: 5px dashed var(--main-area-border);
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
 }
 
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-overview:before {
