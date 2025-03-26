@@ -66,111 +66,120 @@ $(function(){
         }
     }
 
-    function scrollToSection(index) {
-        if (index >= sections.length || isScrolling) return;
 
-        isScrolling = true;
+    // Scroll 설정 [PC에서만 동작]
+    if (/Android|iPhone/i.test(navigator.userAgent) === false) {
+        function scrollToSection(index) {
+            if (index >= sections.length || isScrolling) return;
 
-        if (index < 0) { home.scrollIntoView({behavior: "smooth"}); }
-        else { sections[index].scrollIntoView({ behavior: "smooth" }); }
+            isScrolling = true;
 
-        activeSetting(index);
-        setTimeout(() => {
-            currentIndex = index;
-            isScrolling = false;
-        }, 800); // 스크롤 완료 후 대기
+            if (index < 0) { home.scrollIntoView({behavior: "smooth"}); }
+            else { sections[index].scrollIntoView({ behavior: "smooth" }); }
+
+            activeSetting(index);
+            setTimeout(() => {
+                currentIndex = index;
+                isScrolling = false;
+            }, 800); // 스크롤 완료 후 대기
+        }
+
+
+        infoAreaBlockList.forEach(function(infoAreaBlock){
+            infoAreaBlock.addEventListener("wheel", function (event) {
+                const target = event.currentTarget;
+                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
+                if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+                    event.stopPropagation();
+                }
+            })
+
+            // 터치 이벤트 (모바일)
+            let startY = 0;
+            let isEnd = false;
+            let isStart = false;
+            infoAreaBlock.addEventListener("touchstart", function (event) {
+                startY = event.touches[0].clientY;
+                const target = event.currentTarget;
+                isStart = target.scrollTop > 0;
+                isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
+            });
+
+            infoAreaBlock.addEventListener("touchend", function (event) {
+                let endY = event.changedTouches[0].clientY;
+                let deltaY = startY - endY;
+
+                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
+                if((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
+                    event.stopPropagation();
+                }
+            });
+        });
+
+        stepProjectList.forEach(function(stepProject){
+            stepProject.addEventListener("wheel", function (event) {
+                const target = event.currentTarget;
+                if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+                    event.stopPropagation();
+                }
+            })
+
+            // 터치 이벤트 (모바일)
+            let startY = 0;
+            let isEnd = false;
+            let isStart = false;
+
+            stepProject.addEventListener("touchstart", function (event) {
+                startY = event.touches[0].clientY;
+                const target = event.currentTarget;
+                isStart = target.scrollTop > 0;
+                isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
+            });
+
+            stepProject.addEventListener("touchend", function (event) {
+                let endY = event.changedTouches[0].clientY;
+                let deltaY = startY - endY;
+
+                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
+                if((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
+                    event.stopPropagation();
+                }
+            });
+        })
+
+
+        // 마우스 휠 이벤트 (데스크탑)
+        wrapInfo.addEventListener("wheel", function (event) {
+            if (isScrolling) return;
+
+            if (event.deltaY > 0) {
+                scrollToSection(currentIndex + 1);
+            } else if (event.deltaY < 0) {
+                scrollToSection(currentIndex - 1);
+            }
+        });
+
+        // 터치 이벤트 (모바일)
+        let startY = 0;
+        wrapInfo.addEventListener("touchstart", function (event) {
+            startY = event.touches[0].clientY;
+        });
+
+        wrapInfo.addEventListener("touchend", function (event) {
+            let endY = event.changedTouches[0].clientY;
+            let deltaY = startY - endY;
+
+            let moveHeight = (event.view.screen.height / 3) * 2
+
+            if (deltaY > moveHeight) {
+                scrollToSection(currentIndex + 1); // 아래로 스크롤
+            } else if (deltaY < -moveHeight) {
+                scrollToSection(currentIndex - 1); // 위로 스크롤
+            } else {
+                scrollToSection(currentIndex); // 제자리로 이동
+            }
+        });
     }
-
-
-    infoAreaBlockList.forEach(function(infoAreaBlock){
-        infoAreaBlock.addEventListener("wheel", function (event) {
-            const target = event.currentTarget;
-            // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-            if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
-                event.stopPropagation();
-            }
-        })
-
-        // 터치 이벤트 (모바일)
-        let startY = 0;
-        infoAreaBlock.addEventListener("touchstart", function (event) {
-            startY = event.touches[0].clientY;
-        });
-
-        infoAreaBlock.addEventListener("touchend", function (event) {
-            let endY = event.changedTouches[0].clientY;
-            let deltaY = startY - endY;
-            const target = event.currentTarget;
-
-            // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-            if((deltaY < 0 && target.scrollTop > 0) || deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
-                event.stopPropagation();
-            }
-        });
-    });
-
-    stepProjectList.forEach(function(stepProject){
-        stepProject.addEventListener("wheel", function (event) {
-            const target = event.currentTarget;
-            if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
-                event.stopPropagation();
-            }
-        })
-
-        // 터치 이벤트 (모바일)
-        let startY = 0;
-        let isEnd = false;
-        let isStart = false;
-
-        stepProject.addEventListener("touchstart", function (event) {
-            startY = event.touches[0].clientY;
-        });
-
-        stepProject.addEventListener("touchend", function (event) {
-            let endY = event.changedTouches[0].clientY;
-            let deltaY = startY - endY;
-            const target = event.currentTarget;
-
-            // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-            if((deltaY < 0 && target.scrollTop > 0) || deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
-                event.stopPropagation();
-            }
-        });
-    })
-
-
-    // 마우스 휠 이벤트 (데스크탑)
-    wrapInfo.addEventListener("wheel", function (event) {
-        if (isScrolling) return;
-
-        if (event.deltaY > 0) {
-            scrollToSection(currentIndex + 1);
-        } else if (event.deltaY < 0) {
-            scrollToSection(currentIndex - 1);
-        }
-    });
-
-    // 터치 이벤트 (모바일)
-    let startY = 0;
-    wrapInfo.addEventListener("touchstart", function (event) {
-        startY = event.touches[0].clientY;
-    });
-
-    wrapInfo.addEventListener("touchend", function (event) {
-        let endY = event.changedTouches[0].clientY;
-        let deltaY = startY - endY;
-
-        let moveHeight = (event.view.screen.height / 2)
-
-        if (deltaY > moveHeight) {
-            scrollToSection(currentIndex + 1); // 아래로 스크롤
-        } else if (deltaY < -moveHeight) {
-            scrollToSection(currentIndex - 1); // 위로 스크롤
-        } else {
-            scrollToSection(currentIndex); // 제자리로 이동
-        }
-    });
-
 
     //Wizard Event
     let currentStep = 0;
