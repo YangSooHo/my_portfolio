@@ -1,8 +1,11 @@
 /* Responsive Setting */
-@media screen and (max-device-width: 900px) {
+@media screen and (max-device-width: 480px) {
     section.info-area {
-        height: 125rem !important;
+        height: 100lvh;
     }
+}
+
+@media screen and (max-device-width: 900px) {
 
     section.wrap-info > section#experience .info-area-list-container > .list-container-title {
         font-size: 21px;
