@@ -1,7 +1,11 @@
 /* Responsive Setting */
 @media screen and (max-device-width: 480px) {
     section.info-area {
-        height: calc(245vw - 15rem) !important;
+        height: calc(200vw - 15rem) !important;
+    }
+
+    section.wrap-info > section.info-area > .info-area-block {
+        margin-top: 1.5rem !important;
     }
 }
 
