@@ -33,7 +33,6 @@
         flex-flow: column nowrap !important;
         justify-content: start;
         overflow: auto;
-        width: 75vw
     }
 
     section.wrap-info > section#projects .step-project > .step-project-content {
@@ -57,8 +56,16 @@
         font-size: 24px !important;
     }
 
+    section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture {
+        flex-flow: column nowrap !important;
+    }
+
     section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture img {
-        width: 75% !important;
+        width: 100% !important;
+    }
+
+    section#home {
+        height: 93vh !important;
     }
 }
 

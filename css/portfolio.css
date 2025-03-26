@@ -82,6 +82,33 @@ body {
     font-weight: bold;
 }
 
+/* Label */
+
+.label-block {
+    display: inline-block;
+    width: 150px;
+}
+
+.label-block.lg {
+    font-size: 24px;
+    width: 225px !important;
+}
+
+.label-block.md {
+    font-size: 18px;
+    width: 150px !important;
+}
+
+.label-lg {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.label-md {
+    display: inline-block;
+    font-size: 18px;
+}
+
 /* Table Design */
 .table {
     width: 100%;
@@ -139,6 +166,30 @@ thead, tbody, tfoot, tr, td, th {
     border-color: inherit;
     border-style: solid;
     border-width: 0;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.mt-1 {
+    margin-top: 0.5rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.mt-3 {
+    margin-top: 1.5rem;
 }
 
 /* Area */
@@ -334,8 +385,7 @@ section.wrap-info > section.info-area {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    height: 1280px;
+    height: 100vh;
     background-color: var(--info-area-bg-color);
 }
 
@@ -362,10 +412,6 @@ section.wrap-info > section#skills {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/skills.png?raw=true");
     background-position: center center;
     background-repeat: no-repeat;
-}
-
-section.wrap-info > section#skills .info-area-block {
-    border: 5px solid var(--main-area-border);
 }
 
 section.wrap-info > section#skills .info-area-detail-block {
@@ -606,6 +652,12 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     border: 5px dashed var(--main-area-border);
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture > .picture-block {
+    padding: 1rem;
 }
 
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail {
@@ -631,23 +683,46 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     padding: 0.5rem;
 }
 
-section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-libraries:before {
+section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-dev-env:before {
+    content: "Development Environment";
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    width: 100%;
+}
+section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-dev-env {
+    border: 5px dashed var(--main-area-border);
+    margin: 1rem;
+    flex: 2;
+    white-space: pre-line;
+    padding: 0.5rem;
+}
+
+section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-data:before {
     content: "Details";
     font-size: 24px;
     font-weight: bold;
     display: inline-block;
     width: 100%;
 }
-section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-libraries {
+section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-data {
     border: 5px dashed var(--main-area-border);
     margin: 1rem;
-    flex: 1;
+    flex: 2;
     white-space: pre-line;
     padding: 0.5rem;
 }
 
+section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-footer {
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture img {
-    width: 100%;
+    max-width: 100%; /* 테이블 셀(td) 너비를 초과하지 않도록 제한 */
+    height: auto; /* 비율을 유지하면서 크기 조정 */
+    display: block; /* 가운데 정렬 문제 방지 */
+    margin: 0 auto; /* 이미지가 가운데 정렬되도록 설정 */
 }
 
 section.wrap-info > section#reference {

@@ -18,7 +18,7 @@ $(function(){
     const sections = document.querySelectorAll(".wrap-info .info-area");
     const wrapInfo = document.querySelector(".wrap-info");
     const infoAreaBlockList = document.querySelectorAll(".info-area > .info-area-block");
-    const stepProjectList = document.querySelectorAll(".step-project");
+    const stepProjectList = document.querySelectorAll(".step-project-content");
 
     let currentIndex = 0;
     let isScrolling = false;
@@ -93,17 +93,21 @@ $(function(){
 
         // 터치 이벤트 (모바일)
         let startY = 0;
+        let isEnd = false;
+        let isStart = false;
         infoAreaBlock.addEventListener("touchstart", function (event) {
             startY = event.touches[0].clientY;
+            const target = event.currentTarget;
+            isStart = target.scrollTop > 0;
+            isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
         });
 
         infoAreaBlock.addEventListener("touchend", function (event) {
             let endY = event.changedTouches[0].clientY;
             let deltaY = startY - endY;
 
-            const target = event.currentTarget;
             // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-            if((deltaY < 0 && target.scrollTop > 0) || deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+            if((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
                 event.stopPropagation();
             }
         });
@@ -112,7 +116,6 @@ $(function(){
     stepProjectList.forEach(function(stepProject){
         stepProject.addEventListener("wheel", function (event) {
             const target = event.currentTarget;
-            // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
             if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
                 event.stopPropagation();
             }
@@ -120,17 +123,22 @@ $(function(){
 
         // 터치 이벤트 (모바일)
         let startY = 0;
+        let isEnd = false;
+        let isStart = false;
+
         stepProject.addEventListener("touchstart", function (event) {
             startY = event.touches[0].clientY;
+            const target = event.currentTarget;
+            isStart = target.scrollTop > 0;
+            isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
         });
 
         stepProject.addEventListener("touchend", function (event) {
             let endY = event.changedTouches[0].clientY;
             let deltaY = startY - endY;
 
-            const target = event.currentTarget;
             // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-            if((deltaY < 0 && target.scrollTop > 0) || deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+            if((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
                 event.stopPropagation();
             }
         });
@@ -158,10 +166,14 @@ $(function(){
         let endY = event.changedTouches[0].clientY;
         let deltaY = startY - endY;
 
-        if (deltaY > 50) {
+        let moveHeight = (event.view.screen.height / 3) * 2
+
+        if (deltaY > moveHeight) {
             scrollToSection(currentIndex + 1); // 아래로 스크롤
-        } else if (deltaY < -50) {
+        } else if (deltaY < -moveHeight) {
             scrollToSection(currentIndex - 1); // 위로 스크롤
+        } else {
+            scrollToSection(currentIndex); // 제자리로 이동
         }
     });
 
