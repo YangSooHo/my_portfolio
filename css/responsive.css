@@ -31,6 +31,7 @@
 
     section.wrap-info > section#experience .info-area-block {
         flex-flow: column nowrap !important;
+        justify-content: start;
         overflow: auto;
         width: 75vw
     }
