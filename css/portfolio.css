@@ -385,7 +385,7 @@ section.wrap-info > section.info-area {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100lvh;
     background-color: var(--info-area-bg-color);
 }
 
@@ -395,7 +395,7 @@ section.wrap-info > section.info-area > .info-area-block {
     padding: 1rem;
     margin-top: 7.5rem;
     width: 80vw;
-    height: 75vh;
+    height: 75lvh;
 
     display: inline-flex;
     flex-flow: row wrap;
