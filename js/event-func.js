@@ -166,7 +166,7 @@ $(function(){
         let endY = event.changedTouches[0].clientY;
         let deltaY = startY - endY;
 
-        let moveHeight = (event.view.screen.height / 3) * 2
+        let moveHeight = (event.view.screen.height / 2)
 
         if (deltaY > moveHeight) {
             scrollToSection(currentIndex + 1); // 아래로 스크롤
