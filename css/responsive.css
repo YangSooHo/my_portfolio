@@ -1,7 +1,7 @@
 /* Responsive Setting */
 @media screen and (max-device-width: 900px) {
     section.info-area {
-        height: 100lvh !important;
+        height: calc(var(--vh, 1vh) * 100); !important;
     }
 
     section.wrap-info > section#experience .info-area-list-container > .list-container-title {
@@ -65,7 +65,7 @@
     }
 
     section#home {
-        height: 93lvh !important;
+        height: calc(var(--vh, 1vh) * 93); !important;
     }
 }
 
