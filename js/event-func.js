@@ -18,6 +18,7 @@ $(function(){
     const sections = document.querySelectorAll(".wrap-info .info-area");
     const wrapInfo = document.querySelector(".wrap-info");
     const infoAreaBlockList = document.querySelectorAll(".info-area > .info-area-block");
+    const stepProjectList = document.querySelectorAll(".step-project");
 
     let currentIndex = 0;
     let isScrolling = false;
@@ -80,8 +81,8 @@ $(function(){
         }, 800); // 스크롤 완료 후 대기
     }
 
-    infoAreaBlockList.forEach(function(infoAreaBlock){
 
+    infoAreaBlockList.forEach(function(infoAreaBlock){
         infoAreaBlock.addEventListener("wheel", function (event) {
             const target = event.currentTarget;
             // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
@@ -107,6 +108,34 @@ $(function(){
             }
         });
     });
+
+    stepProjectList.forEach(function(stepProject){
+        stepProject.addEventListener("wheel", function (event) {
+            const target = event.currentTarget;
+            // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
+            if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+                event.stopPropagation();
+            }
+        })
+
+        // 터치 이벤트 (모바일)
+        let startY = 0;
+        stepProject.addEventListener("touchstart", function (event) {
+            startY = event.touches[0].clientY;
+        });
+
+        stepProject.addEventListener("touchend", function (event) {
+            let endY = event.changedTouches[0].clientY;
+            let deltaY = startY - endY;
+
+            const target = event.currentTarget;
+            // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
+            if((deltaY < 0 && target.scrollTop > 0) || deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+                event.stopPropagation();
+            }
+        });
+    })
+
 
     // 마우스 휠 이벤트 (데스크탑)
     wrapInfo.addEventListener("wheel", function (event) {
