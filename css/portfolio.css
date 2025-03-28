@@ -600,19 +600,29 @@ section.wrap-info > section#projects .step.active {
     opacity: 1;
 }
 
-section.wrap-info > section#projects .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    position: absolute;
-    left: 10%;
-    margin-top: 10px;
-}
-section.wrap-info > section#projects .nav-buttons > .button-container {
+/*section.wrap-info > section#projects .nav-buttons {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    width: 80%;*/
+/*    position: absolute;*/
+/*    left: 10%;*/
+/*    margin-top: 10px;*/
+/*}*/
+section.wrap-info > section#projects .button-container-left,  section.wrap-info > section#projects .button-container-right{
     display:flex;
     flex-direction: column;
     gap: 1rem;
 }
+.button-container-left {
+    position: absolute;
+    left: 10%;
+}
+
+.button-container-right {
+    position: absolute;
+    right: 10%;
+}
+
 section.wrap-info > section#projects .nav-btn {
     background: var(--wizard-step-btn-color);
     border: none;
@@ -666,6 +676,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     border: 5px dashed var(--main-area-border);
     display: flex;
     flex-flow: column nowrap;
+    overflow: auto;
 }
 
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-overview:before {
@@ -693,7 +704,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-dev-env {
     border: 5px dashed var(--main-area-border);
     margin: 1rem;
-    flex: 2;
+    flex: 1;
     white-space: pre-line;
     padding: 0.5rem;
 }
@@ -708,7 +719,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-data {
     border: 5px dashed var(--main-area-border);
     margin: 1rem;
-    flex: 2;
+    flex: 1;
     white-space: pre-line;
     padding: 0.5rem;
 }
