@@ -30,8 +30,71 @@
   <script src="js/jquery/jquery.min.js"></script>
   <script src="js/event-func.js"></script>
 
+  <!-- SweetAlert2  -->
+  <link rel="stylesheet" href="sweet-alert2/sweetalert2.min.css"></link>
+  <script src="sweet-alert2/sweetalert2.all.min.js"></script>
+
   <!-- Fontawsome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <script>
+
+    function dialogDiv(title, container) {
+      const html = $(container).html();
+
+      Swal.fire({
+        title: `<i class="fas fa-check-square"></i> ${title}`,
+        width: 1000,
+        html: `
+            <div class="alert-container">
+                ${html}
+            </div>
+        `,
+        background: '#fffae4',
+        confirmButtonColor: '#eabd13',
+      })
+
+    }
+
+  </script>
+
+  <style>
+    .swal2-title {
+      color: var(--main-profile-title);)
+    }
+
+    .btn-container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: start;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .alert-container {
+      white-space: pre-line;
+      text-align: left;
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    .alert-container > span:before {
+      font-family: "Font Awesome 6 Free",sans-serif;
+      font-weight: 900;
+      content: "\f061";
+      padding-right: 0.75rem;
+    }
+
+    .alert-container > span.feed-line:before {
+      font-family: "Arial",sans-serif;
+      content: "   ";
+      padding-right: 1.75rem;
+    }
+
+    .d-none {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -975,8 +1038,8 @@
                         <span class="label-block"></span>
                         <span class="label-block"><i class="fas fa-arrow-right"></i> 언어</span>| Java (JDK 11), HTML/CSS, Javascript, JSP
                         <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 8.0
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2, Spring-Security, Mybatis 3.5
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server, MySQL
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2.2, Spring-Security, Mybatis 3.5
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server 2019, MySQL
                         <span class="label-block"><i class="fas fa-arrow-right"></i> IDE</span>| Intellij, SSMS(SQL Server Management Studio), Github, MySQL Workbench
                         <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| Lombok, JQuery, Logback, Spring Data JPA
                       </div>
@@ -984,7 +1047,7 @@
                         <span><i class="fas fa-arrow-right"></i> 시험 운용 장비의 스케쥴 관리</span>
                         <span><i class="fas fa-arrow-right"></i> Spring Security를 이용한 자동 Session 관리</span>
                         <span><i class="fas fa-arrow-right"></i> Spring Data JPA 기반으로 Class 단위로 Entity 관리</span>
-                        <span><i class="fas fa-arrow-right"></i> Local 환경에서 MySQL 사용 / 실제 적용 환경에서 SQL Server 사용</span>
+                        <span><i class="fas fa-arrow-right"></i> Local 환경에서 MySQL 사용 / 실제 적용 환경에서 MS SQL Server 사용</span>
                         <span><i class="fas fa-arrow-right"></i> LinkedServer의 외부 테이블 제공되는 사내 데이터베이스를 View로 참조하여 회사 직원 로그인 연동</span>
                       </div>
                     </div>
@@ -1006,15 +1069,15 @@
                       <div class="step-project-content-dev-env">
                         <span class="label-block"></span>
                         <span class="label-block"><i class="fas fa-arrow-right"></i> 언어</span>| Java (JDK 11), HTML/CSS, Javascript, JSP, Apache Freemarker
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 9.0
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2, Spring Security, Mybatis 3.5, Sitemesh
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 9.0, NGiNX
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2.2, Spring Security, Mybatis 3.5, Sitemesh
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server 2019
                         <span class="label-block"><i class="fas fa-arrow-right"></i> IDE</span>| Intellij, SSMS(SQL Server Management Studio), Github
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| Lombok, JQuery, Logback, Spring Data JPA, queryDSL, PDF.js, flyway, Jakarta mail
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| Lombok, JQuery, SweetAlert2, Logback, Spring Data JPA, queryDSL, PDF.js, flyway, Jakarta mail
                         <span class="label-block"><i class="fas fa-arrow-right"></i> 컴포넌트</span>| GroupDocs Conversion, GroupDocs Assembly
                       </div>
                       <div class="step-project-content-data">
-                        <span><i class="fas fa-arrow-right"></i> 특정 회사의 SOP 문서를 관리하기 위한 시스템</span>
+                        <span><i class="fas fa-arrow-right"></i> 회사 내 SOP 문서를 관리하고 직원들에게 교육을 하기 위한 시스템</span>
                         <span><i class="fas fa-arrow-right"></i> LinkedServer의 직원 데이터베이스를 View로 참조하여 회사 직원 로그인 연동</span>
                         <span><i class="fas fa-arrow-right"></i> flyway 라이브러리를 통한 외부 직원 데이터 베이스 테이블 생성 및 관리</span>
                         <span><i class="fas fa-arrow-right"></i> JSP Sitemesh를 이용하여 Template Layout 구성</span>
@@ -1022,10 +1085,13 @@
                         <span><i class="fas fa-arrow-right"></i> Spring Security를 이용한 자동 Session 관리</span>
                         <span><i class="fas fa-arrow-right"></i> Spring Data JPA 기반으로 Class 단위로 Entity 관리</span>
                         <span><i class="fas fa-arrow-right"></i> queryDSL 라이브러리를 통해 Query 메서드 함수 관리</span>
+                        <span><i class="fas fa-arrow-right"></i> JQuery를 활용하여 Javascript 영역 내에 이벤트 처리 및 HTML Element 동적 처리에 사용</span>
+                        <span><i class="fas fa-arrow-right"></i> sweetAlert를 통해 부드러운 Modal 영역 처리</span>
                         <span><i class="fas fa-arrow-right"></i> PDF.js 자바스크립트 라이브러리를 통해 pdf Viewer 출력</span>
                         <span><i class="fas fa-arrow-right"></i> GroupDocs Conversion을 통해 Excel 및 Word 파일을 Viewer로 보여줌</span>
                         <span><i class="fas fa-arrow-right"></i> GroupDocs Assembly를 통해 업로드된 SOP 문서를 이미지로 생성처리하고, 워터마크를 삽입하여 이미지로 저장함</span>
                         <span><i class="fas fa-arrow-right"></i> Jakarta mail API를 이용하여 SMTP 이메일 전송 서비스 구성</span>
+                        <span><i class="fas fa-arrow-right"></i> 전자 결제 시스템을 통해 외부 감사 직원이 특정 SOP를 열람할 수 있게 하거나, 교육 기한이 만료된 직원의 교육 기한을 재조정 해주는 등의 기능을 수행할 수 있음</span>
                       </div>
                     </div>
                   </div>
@@ -1046,11 +1112,11 @@
                       <div class="step-project-content-dev-env">
                         <span class="label-block"></span>
                         <span class="label-block"><i class="fas fa-arrow-right"></i> 언어</span>| Java (JDK 11), HTML/CSS, Javascript, Thymeleaf
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 9.0
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2, Spring Security, Mybatis 3.5
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server, MySQL
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 9.0, NGiNX
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2.2, Spring Security, Mybatis 3.5
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server 2019
                         <span class="label-block"><i class="fas fa-arrow-right"></i> IDE</span>| Intellij, SSMS(SQL Server Management Studio), Github
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| Lombok, JQuery, Logback, Spring Data JPA, queryDSL, PDF.js, flyway, Jakarta mail
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| Lombok, JQuery, SweetAlert2, Logback, Spring Data JPA, queryDSL, PDF.js, flyway, Jakarta mail
                         <span class="label-block"><i class="fas fa-arrow-right"></i> 컴포넌트</span>| GroupDocs Conversion, GroupDocs Assembly, GroupDocs Merger
                       </div>
                       <div class="step-project-content-data">
@@ -1061,6 +1127,8 @@
                         <span><i class="fas fa-arrow-right"></i> Spring Security를 이용한 자동 Session 관리</span>
                         <span><i class="fas fa-arrow-right"></i> Spring Data JPA 기반으로 Class 단위로 Entity 관리</span>
                         <span><i class="fas fa-arrow-right"></i> queryDSL 라이브러리를 통해 Query 메서드 함수 관리</span>
+                        <span><i class="fas fa-arrow-right"></i> JQuery를 활용하여 Javascript 영역 내에 이벤트 처리 및 HTML Element 동적 처리에 사용</span>
+                        <span><i class="fas fa-arrow-right"></i> sweetAlert를 통해 부드러운 Modal 영역 처리</span>
                         <span><i class="fas fa-arrow-right"></i> PDF.js 자바스크립트 라이브러리를 통해 pdf Viewer 출력</span>
                         <span><i class="fas fa-arrow-right"></i> GroupDocs Conversion을 통해 Excel 및 Word 파일을 Viewer로 보여줌</span>
                         <span><i class="fas fa-arrow-right"></i> GroupDocs Assembly를 통해 Training Log 내용을 pdf 파일로 변환처리 함</span>
@@ -1086,14 +1154,14 @@
                       <div class="step-project-content-dev-env">
                         <span class="label-block"></span>
                         <span class="label-block"><i class="fas fa-arrow-right"></i> 언어</span>| Java (JDK 11), HTML/CSS, Javascript, JSP, Apache Freemarker
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 9.0
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2, Spring Security, Mybatis 3.5
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 9.0, NGiNX
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2.2, Spring Security, Mybatis 3.5
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server 2019
                         <span class="label-block"><i class="fas fa-arrow-right"></i> IDE</span>| Intellij, SSMS(SQL Server Management Studio), Github
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| Lombok, JQuery, Logback, Spring Data JPA, queryDSL, PDF.js, flyway, Jakarta mail, Spring Data Envers
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| Lombok, JQuery, SweetAlert2, Logback, Spring Data JPA, queryDSL, PDF.js, flyway, Jakarta mail, Spring Data Envers
                       </div>
                       <div class="step-project-content-data">
-                        <span><i class="fas fa-arrow-right"></i> 기존 SOP 시스템과 더불어 ISO 인증에 대한 교육 내용을 등록하고 그에 따른 수강 진행 및 수료증 발급을 수행하는 시스템</span>
+                        <span><i class="fas fa-arrow-right"></i> SOP 문서를 열람할 수 있고, ISO 인증에 대한 교육 내용을 등록하고 그에 따른 수강 진행 및 수료증 발급을 수행하는 시스템</span>
                         <span><i class="fas fa-arrow-right"></i> LinkedServer의 외부 테이블 제공되는 사내 데이터베이스를 View로 참조하여 회사 직원 로그인 연동</span>
                         <span><i class="fas fa-arrow-right"></i> flyway 라이브러리를 통해 기존 테이블을 활용한 View 테이블 생성 및 관리</span>
                         <span><i class="fas fa-arrow-right"></i> JSP Sitemesh를 이용하여 Template Layout 구성</span>
@@ -1102,9 +1170,9 @@
                         <span><i class="fas fa-arrow-right"></i> Spring Data JPA 기반으로 Class 단위로 Entity 관리</span>
                         <span><i class="fas fa-arrow-right"></i> queryDSL 라이브러리를 통해 Query 메서드 함수 관리</span>
                         <span><i class="fas fa-arrow-right"></i> PDF.js 자바스크립트 라이브러리를 통해 pdf Viewer 출력</span>
-                        <span><i class="fas fa-arrow-right"></i> GroupDocs Conversion을 통해 Excel 및 Word 파일을 Viewer로 보여줌</span>
-                        <span><i class="fas fa-arrow-right"></i> GroupDocs Assembly를 통해 Training Log 내용을 pdf 파일로 변환처리 함</span>
-                        <span><i class="fas fa-arrow-right"></i> GroupDocs Merger를 통해 Digital Binder 메뉴를 통해, 여러가지 pdf 파일을 하나로 묶는 작업을 수행함</span>
+                        <span><i class="fas fa-arrow-right"></i> GroupDocs Conversion을 통해 Excel 및 Word 파일을 Viewer로 변환</span>
+                        <span><i class="fas fa-arrow-right"></i> GroupDocs Assembly를 통해 Training Log 내용을 pdf 파일로 변환처리</span>
+                        <span><i class="fas fa-arrow-right"></i> GroupDocs Merger를 통해 Digital Binder 메뉴를 통해, 여러가지 pdf 파일을 하나로 묶는 작업을 수행</span>
                         <span><i class="fas fa-arrow-right"></i> Jakarta mail API를 이용하여 SMTP 이메일 전송 서비스 구성</span>
                         <span><i class="fas fa-arrow-right"></i> Spring Data Envers 라이브러리를 통한 데이터 추적관리 진행 및 데이터 변경 기록 및 열람 가능</span>
                       </div>
@@ -1119,27 +1187,65 @@
                     <div class="step-project-content-picture"></div>
                     <div class="step-project-content-detail">
                       <div class="step-project-content-overview">
-                        <span class="label-lg"><i class="far fa-building"></i> 시험 장비 및 설비 일정 관리 웹 어플리케이션</span>
-                        <span class="label-block md"><i class="fas fa-arrow-right"></i> 개발 기간</span><span class="label-md">| 2020-03 - 2020-06 (3개월)</span>
+                        <span class="label-lg"><i class="far fa-building"></i> 임상 데이터 관리 시스템</span>
+                        <span class="label-block md"><i class="fas fa-arrow-right"></i> 개발 및 유지보수 기간</span><span class="label-md">| 2021-04 - 2024-12 (개월)</span>
                         <span class="label-block md"><i class="fas fa-arrow-right"></i> 플랫폼</span><span class="label-md">| Web</span>
-                        <span class="label-block md"><i class="fas fa-arrow-right"></i> 개발 인원</span><span class="label-md">| 1명</span>
+                        <span class="label-block md"><i class="fas fa-arrow-right"></i> 인원</span><span class="label-md">| 2-4명</span>
                       </div>
                       <div class="step-project-content-dev-env">
                         <span class="label-block"></span>
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 언어</span>| Java (JDK 11), HTML/CSS, Javascript, JSP
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 8.0
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.2, Spring-Security, Mybatis 3.5
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server, MySQL
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> IDE</span>| Intellij, SSMS(SQL Server Management Studio), Github, MySQL Workbench
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> API, 라이브러리</span>| JQuery, Logback, Spring Data JPA
-                        <span class="label-block"><i class="fas fa-arrow-right"></i> 컴포넌트</span>| GroupDocs Conversion, GroupDocs Assembly
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 언어</span>| Java (JDK 17), HTML/CSS, Javascript, Thymeleaf, ReactJS, SCSS
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 서버</span>| Apache Tomcat 8.0, NGiNX, Redis Server, MS-Azure
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 프레임워크</span>| Spring Boot Framework 2.6.6, Spring-Security, Mybatis 3.5, Bootstrap, Webpack
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> DB</span>| Microsoft SQL Server 2022, MongoDB
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> IDE</span>| Intellij, SSMS(SQL Server Management Studio), MongoDB Compass, Github, Docker, Postman, Yarn
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> BE Lib/API</span>| Lombok, Logback, Spring Data JPA, Spring Data Envers, JAXB, Jakarta Mail, Swagger, RestTemplate, iText7 / htmlToPdf 등
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> FE Lib/API</span>| React-DOM-Router, JQuery, Ant Design, Redux, Redux-Saga, Promise Tracker, React-Query, Zustand, react-i18next, react-cookies 등
+                        <span class="label-block"><i class="fas fa-arrow-right"></i> 컴포넌트</span>| DevExtreme
                       </div>
                       <div class="step-project-content-data">
-                        <span><i class="fas fa-arrow-right"></i> 시험 운용 장비의 스케쥴 관리</span>
-                        <span><i class="fas fa-arrow-right"></i> Spring Security를 이용한 자동 Session 관리</span>
-                        <span><i class="fas fa-arrow-right"></i> Spring Data JPA 기반으로 Class 단위로 Entity 관리</span>
-                        <span><i class="fas fa-arrow-right"></i> Local 환경에서 MySQL 사용 / 실제 적용 환경에서 SQL Server 사용</span>
-                        <span><i class="fas fa-arrow-right"></i> LinkedServer의 외부 테이블 제공되는 사내 데이터베이스를 View로 참조하여 회사 직원 로그인 연동</span>
+                        <span><i class="fas fa-arrow-right"></i> 임상시험 진행 시, 병원에서 임상 시험 대상자를 중심으로 발생되는 전자 증례기록서(eCRF)와 관련 데이터 및 문서를 관리하는 SaaS 형식의 웹 시스템</span>
+                        <span><i class="fas fa-arrow-right"></i> 사내 관리자를 통해 최초에 관리자 레벨의 사용자를 추가하고 관리할 수 있는 Adminconsole, </span>
+                        <span class="feed-line">임상 데이터에 대한 메타데이터 정의 및 증례기록서(CaseReportForm)에 대한 내용을 정의하고 빌드할 수 있는 Builder,</span>
+                        <span class="feed-line">실제 병원 직원이 데이터를 입력하고 이에 대한 관리를 수행할 수 있는 CDMS (DEV / UAT / PROD)로 구성</span>
+                        <span><i class="fas fa-arrow-right"></i> 사용자에 의해 정의되는 Role과 그에 따른 Privilege 구성을 통해, 사용자 정의 Multi Role을 구현 [ Role - Privilege - Resource]</span>
+                        <div class="btn-container">
+                          <button class="btn btn-main font-weight-bold" onclick="dialogDiv('Environment', '#redpineCDMSEnv')" >#Environment</button>
+                          <button class="btn btn-main font-weight-bold" onclick="dialogDiv('BackEnd', '#redpineCDMSBackEnd')" >#BackEnd</button>
+                          <button class="btn btn-main font-weight-bold" onclick="dialogDiv('FrontEnd', '#redpineCDMSFrontEnd')" >#FrontEnd</button>
+                        </div>
+                        <div id="redpineCDMSEnv" class="d-none">
+                          <span>Builder의 Template은 ReactJS로 구성되어 있으며, Webpack을 통해서 Spring 실행 시, View Template 영역으로 통합하여 사용</span>
+                          <span>Redis Server를 이용하여 별도의 Session으로 여러 Project의 로그인 정보를 한곳에 모아서 관리</span>
+                          <span>Redis Server의 Cache Server기능을 이용하여 대용량 검색 데이터를 관리 [Ex - Medical Coding]</span>
+                          <span>MongoDB의 시스템 구조를 이용하여, XML로 변환이 필요한 동적 데이터를 JSON으로 관리</span>
+                        </div>
+                        <div id="redpineCDMSBackEnd" class="d-none">
+                          <span>Spring Data JPA를 통해 Class 단위로 Entity 관리 및 JPA Auditing 처리 [데이터 등록/수정 시 기록 관리]</span>
+                          <span>Spring Data Envers를 통해 데이터베이스 특정 테이블 자동 기록 관리</span>
+                          <span>위 시스템의 Entity에 대한 데이터베이스를 common, builder, cdms로 분류하여 Transaction Manager를 나누어 관리</span>
+                          <span>Swagger를 통해서 외부 시스템과 인터페이스 구축 시, Restful API등을 정의하는 데에 사용 / 관련 API 문서 제공</span>
+                          <span>iText 라이브러리를 통해, 증례기록서(CRF)에 대한 PDF 문서를 생성하는데에 사용 및 htmlToPdf 모듈로 html기반으로 PDF를 생성</span>
+                          <span>Docker Container를 사용하여 로컬 테스트 진행 시, 가상의 MS-SQL / NginX / Redis Server를 생성하여 사용</span>
+                          <span>Jakarta mail API를 이용하여 SMTP 이메일 전송 서비스 구성 [초대, 알림 등]</span>
+                          <span>해당 시스템은 비영리 임상표준기관 CDISC의 ODM-XML이라는 임상 규격을 준수하여 시스템을 설계하였으며,</span>
+                          <span class="feed-line">JAXB 라이브러리를 통해, ODM-XML에 대한 클래스를 정의, XML <-> Java Class 간 데이터 변환을 수행하여 시스템 내 데이터를 운용.</span>
+                        </div>
+                        <div id="redpineCDMSFrontEnd" class="d-none">
+                          <span>SweetAlert2 라이브러리를 통해 Smooth한 Modal화면 구현</span>
+                          <span>Bootbox.js 라이브러리를 통해 다양한 종류의 Dialog 화면 구현</span>
+                          <span>blockUI 플러그인을 통해 Data Loading 화면 구현</span>
+                          <span>React DOM Router를 통해 React환경 내 URL 관리</span>
+                          <span>Redux / Redux-Saga로, 새로고침 또는 페이지 로딩 시 세션에 등록된 유저 정보 및 Metadata에 대한 데이터 호출에 사용</span>
+                          <span>Promise Tracker를 통해, Redux-Saga에서 수행하는 비동기 API 호출에 의한 응답 동작을 보조</span>
+                          <span>Zustand를 사용하여 공용 데이터에 대한 상태 관리를 수행</span>
+                          <span>React Query를 활용하여 공용 데이터에 대한 호출, 처리 등을 수행</span>
+                          <span>Ant Design을 활용하여 View에 전체적으로 활용되는 Form 또는 레이아웃 디자인 등을 구성</span>
+                          <span>React Beautiful dnd 라이브러리를 통해 eCRF 생성 시 Drag & Drop 구조의 직관적인 설정 방식을 구축</span>
+                          <span>React 18next 라이브러리를 통해 다국어 환경 설정, react-cookies를 활용하여 백엔드 내에 설정되어있는 언어 설정과 동기화 처리</span>
+                          <span>C3.js/D3.js 라이브러리를 통해 CDMS 환경의 Dashboard Chart 표현</span>
+                          <span>DevExtreme 컴포넌트를 사용하여, Data Grid (Table) 및 통계자료 생성 등에 사용</span>
+                        </div>
                       </div>
                     </div>
                   </div>

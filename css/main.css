@@ -48,3 +48,25 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* Button */
+.btn {
+    border-radius: 15px;
+    padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+    border-width: 0;
+    transition: 0.3s;
+    background-color: var(--btn-color);
+}
+
+.btn:hover {
+    color: white;
+    background-color: var(--btn-active-color);
+}
+
+.btn.btn-main {
+    background-color: var(--btn-main-color) !important;
+}
+
+.btn.btn-main:hover {
+    background-color: var(--btn-main-active-color) !important;
+}
