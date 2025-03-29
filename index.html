@@ -28,23 +28,28 @@
 
   <!-- JQuery  -->
   <script src="js/jquery/jquery.min.js"></script>
-  <script src="js/event-func.js"></script>
 
   <!-- SweetAlert2  -->
   <link rel="stylesheet" href="sweet-alert2/sweetalert2.min.css"></link>
+  <link rel="stylesheet" href="sweet-alert2/animate.min.css"></link>
   <script src="sweet-alert2/sweetalert2.all.min.js"></script>
 
   <!-- Fontawsome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+  <!-- My Event JS  -->
+  <script src="js/event-func.js"></script>
+
+
   <script>
 
     function dialogDiv(title, container) {
+      const isMobile = /Android|iPhone/i.test(navigator.userAgent);
       const html = $(container).html();
 
       Swal.fire({
         title: `<i class="fas fa-check-square"></i> ${title}`,
-        width: 1000,
+        width: isMobile?'80%':1000,
         html: `
             <div class="alert-container">
                 ${html}
@@ -52,8 +57,9 @@
         `,
         background: '#fffae4',
         confirmButtonColor: '#eabd13',
+        showClass: {popup: `animate__animated animate__fadeIn animate__faster`},
+        hideClass: {popup: `animate__animated animate__fadeOut animate__faster`}
       })
-
     }
 
   </script>
@@ -989,7 +995,7 @@
                   <div class="step-project-content">
                     <div class="step-project-content-picture">
                       <div class="picture-block">
-                        <img src="images/projects/EQ_manager_1.png" />
+                        <img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/projects/interface/EQ_manager_1.png?raw=true" />
                       </div>
                     </div>
                     <div class="step-project-content-detail">
@@ -1027,10 +1033,10 @@
                   <div class="step-project-content">
                     <div class="step-project-content-picture">
                       <div class="picture-block">
-                        <img src="images/projects/ssms_login.png" />
+                        <img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/projects/ssms/ssms_login.png?raw=true" />
                       </div>
                       <div class="picture-block">
-                        <img src="images/projects/ssms_main.png" />
+                        <img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/projects/ssms/ssms_main.png?raw=true" />
                       </div>
                     </div>
                     <div class="step-project-content-detail">
@@ -1064,7 +1070,14 @@
                 <fieldset class="step-project">
                   <legend class="step-project-title">&nbsp;SOP (Standard Operation Procedure)&nbsp;</legend>
                   <div class="step-project-content">
-                    <div class="step-project-content-picture"></div>
+                    <div class="step-project-content-picture">
+                      <div class="picture-block">
+                        <img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/projects/sop/sop_user.png?raw=true" width="100%" />
+                      </div>
+                      <div class="picture-block">
+                        <img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/projects/sop/sop_admin.png?raw=true" width="100%" />
+                      </div>
+                    </div>
                     <div class="step-project-content-detail">
                       <div class="step-project-content-overview">
                         <span class="label-lg"><i class="far fa-building"></i> 표준 업무 절차 관리 시스템</span>

@@ -19,6 +19,7 @@ $(function(){
     const wrapInfo = document.querySelector(".wrap-info");
     const infoAreaBlockList = document.querySelectorAll(".info-area > .info-area-block");
     const stepProjectList = document.querySelectorAll(".step-project-content");
+    const stepProjectPictureList = document.querySelectorAll('.step-project-content-picture');
     const stepProjectDetailList = document.querySelectorAll('.step-project-content-detail');
 
     let currentIndex = 0;
@@ -138,6 +139,37 @@ $(function(){
             });
 
             stepProject.addEventListener("touchend", function (event) {
+                let endY = event.changedTouches[0].clientY;
+                let deltaY = startY - endY;
+
+                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
+                if((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
+                    event.stopPropagation();
+                }
+            });
+        })
+
+        stepProjectPictureList.forEach(function(stepProjectPicture){
+            stepProjectPicture.addEventListener("wheel", function (event) {
+                const target = event.currentTarget;
+                if((event.deltaY < 0 && target.scrollTop > 0) || event.deltaY > 0 && target.clientHeight + target.scrollTop < target.scrollHeight) {
+                    event.stopPropagation();
+                }
+            })
+
+            // 터치 이벤트 (모바일)
+            let startY = 0;
+            let isEnd = false;
+            let isStart = false;
+
+            stepProjectPicture.addEventListener("touchstart", function (event) {
+                startY = event.touches[0].clientY;
+                const target = event.currentTarget;
+                isStart = target.scrollTop > 0;
+                isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
+            });
+
+            stepProjectPicture.addEventListener("touchend", function (event) {
                 let endY = event.changedTouches[0].clientY;
                 let deltaY = startY - endY;
 
@@ -272,5 +304,22 @@ $(function(){
     });
 
     updateSteps(); // 초기 상태 설정
+
+
+    $('img').click(function({target}) {
+        originPicture(target);
+    })
+
+    function originPicture(target) {
+
+        Swal.fire({
+            html: `<img src="${target.src}" alt=""/>`,
+            showConfirmButton: false,
+            showCloseButton: true,
+            width: target.naturalWidth + 100,
+            showClass: {popup: `animate__animated animate__zoomIn animate__faster`},
+            hideClass: {popup: `animate__animated animate__zoomOut animate__faster`}
+        })
+    }
 
 })

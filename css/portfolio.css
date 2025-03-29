@@ -673,6 +673,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    overflow: auto;
 }
 
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-picture > .picture-block {
@@ -743,6 +744,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     height: auto; /* 비율을 유지하면서 크기 조정 */
     display: block; /* 가운데 정렬 문제 방지 */
     margin: 0 auto; /* 이미지가 가운데 정렬되도록 설정 */
+    cursor: pointer;
 }
 
 section.wrap-info > section#reference {
