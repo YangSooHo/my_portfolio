@@ -208,6 +208,21 @@ thead, tbody, tfoot, tr, td, th {
     margin-top: 1.5rem;
 }
 
+.img-block {
+    background-color: #f3f5f6;
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    display: inline-flex
+;
+    justify-content: center;
+    align-items: center;
+    height: 26px;
+    width: 26px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
 /* Area */
 
 header > .menu-div > nav > ul.toc {
@@ -222,6 +237,7 @@ header > .menu-div > nav > ul.toc {
 
 header > .menu-div > nav > ul.toc > li {
     width: 15rem;
+    background: var(--white-half-transparent-color);
 }
 
 header > .menu-div > nav > ul.toc > li > a {
@@ -284,7 +300,8 @@ section#home > .main-profile {
 section#home > .main-profile > .main-profile-title {
     font-size: 128px;
     font-weight: bold;
-    color: var(--main-profile-title);
+    color: var(--white-color);
+    -webkit-text-stroke: 6px var(--main-profile-title);
 }
 
 section#home > .main-profile > .title-line {
@@ -780,6 +797,42 @@ section.wrap-info > section#reference {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/reference.png?raw=true");
     background-position: center center;
     background-repeat : no-repeat;
+}
+
+section.wrap-info > section#reference .info-area-reference-block > .list-reference-title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+section.wrap-info > section#reference .info-area-reference-block {
+    border-top:  3px solid var(--main-area-border);
+    border-bottom:  3px solid var(--main-area-border);
+    background: var(--white-half-transparent-color);
+    padding: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 25rem;
+}
+
+section.wrap-info > section#reference .info-area-reference-block > .info-area-list-detail > .info-area-detail-item:first-child {
+    border-top: 1px solid var(--black-color);
+}
+
+section.wrap-info > section#reference .info-area-reference-block > .info-area-list-detail > .info-area-detail-item {
+    border-bottom: 1px solid var(--black-color);
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+section.wrap-info > section#reference .info-area-reference-block .info-area-list-detail-title {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+section.wrap-info > section#reference .info-area-reference-block .info-area-list-content-item:before {
+    content: "- ";
 }
 
 footer {

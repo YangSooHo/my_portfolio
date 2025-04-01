@@ -246,7 +246,6 @@ $(function () {
             scrollToSection(currentIndex); // 제자리로 이동
         }
     });
-    // }
 
     //Wizard Event
     let currentStep = 0;
@@ -309,7 +308,9 @@ $(function () {
 
 
     $('img').click(function ({target}) {
-        originPicture(target);
+        if(target.className !== 'logo') {
+            originPicture(target);
+        }
     })
 
     function originPicture(target) {
