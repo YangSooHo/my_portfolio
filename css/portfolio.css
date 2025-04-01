@@ -1,36 +1,86 @@
 :root {
-    --header-bg-color: #F6E0C5;
-    --header-active-color: #F12929;
+    /*--header-bg-color: #F6E0C5;*/
+    /*--header-color: #f8b05d;*/
+    /*--header-active-color: #F12929;*/
 
-    --main-area-border: #EDC290;
+    /*--main-area-border: #EDC290;*/
+    /*--main-profile-title: #F1A42F;*/
+    /*--main-bg-color: #FFFDDF;*/
+
+    /*--main-bg-color-half-transparent: rgba(255, 253, 223, 0.6);*/
+
+    /*--sub-profile-grid-border: #F1A42F;*/
+    /*--sub-profile-grid-bg-color: rgba(255, 255, 255, 0.7);*/
+    /*--content-block-border: rgba(0,0,0,0.25);*/
+    /*--wizard-step-btn-color: #f3b552;*/
+
+    /*--wrap-info-bg-color: #FFE499;*/
+    /*--info-area-bg-color: #FFECA7;*/
+
+    /*--footer-bg-color: #080808;*/
+    /*--footer-reference-bg-color: #393939;*/
+    /*--footer-block-border: #2b2b2b;*/
+    /*--footer-text-color: #898989;*/
+
+    /*--btn-color: #e1e1e1;*/
+    /*--btn-active-color: #7a7a7a;*/
+    /*--btn-main-color: #f9d9a4;*/
+    /*--btn-main-active-color: #edae19;*/
+
+    /*--white-color: #FFFFFF;*/
+    /*--white-half-transparent-color: #FFFFFF7F;*/
+    /*--black-color: #000000;*/
+
+    /*--skill-level-color: #F1A42FA5;*/
+    --header-bg-color: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,1) 100%);
+    --header-color: #a6a6a6;
+    --header-active-color: #ffffff;
+
+    --default-font-color: #ededed;
+
+    /* Title-color */
     --main-profile-title: #F1A42F;
-    --main-bg-color: #FFFDDF;
 
-    --main-bg-color-half-transparent: rgba(255, 253, 223, 0.6);
-
-    --sub-profile-grid-border: #F1A42F;
-    --sub-profile-grid-bg-color: rgba(255, 255, 255, 0.7);
-    --content-block-border: rgba(0,0,0,0.25);
-    --wizard-step-btn-color: #f3b552;
-
-    --wrap-info-bg-color: #FFE499;
-    --info-area-bg-color: #FFECA7;
-
+    /* Background Color */
+    --gradient-main-bg-color: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,1) 100%);
+    --main-bg-color: #060606;
+    --main-bg-color-half-transparent: rgba(06, 06, 06, 0.6);
+    --sub-profile-grid-bg-color: rgba(20, 20, 20, 0.85);
+    --wrap-info-bg-color: #060606;
+    --info-area-bg-color: #0e0e0e;
     --footer-bg-color: #080808;
     --footer-reference-bg-color: #393939;
-    --footer-block-border: #2b2b2b;
-    --footer-text-color: #898989;
 
+    /* Border */
+    --main-area-border: #838383;
+    --sub-profile-grid-border: #a5a5a5;
+    --picture-border: #e4e4e4;
+    --content-block-border: rgba(0,0,0,0.25);
+    --footer-block-border: #2b2b2b;
+
+    /* Btn Color */
+    --wizard-step-btn-color: #f3b552;
     --btn-color: #e1e1e1;
     --btn-active-color: #7a7a7a;
     --btn-main-color: #f9d9a4;
     --btn-main-active-color: #edae19;
 
+    /* Table */
+    --table-bg-color: #060606;
+    --table-border-color: #8a8a8a;
+    --table-color: #c5c5c5;
+
+    /* Common */
+    --footer-text-color: #898989;
     --white-color: #FFFFFF;
     --white-half-transparent-color: #FFFFFF7F;
+    --white-75p-transparent-color: rgba(255, 255, 255, 0.75);
     --black-color: #000000;
 
-    --skill-level-color: #F1A42FA5;
+    /* Skill Color */
+    --skill-level-color: rgb(115, 115, 115);
+    --skill-level-container-color: rgb(255, 255, 255);
+    --skill-level-marker-color: var(--skill-level-color);
 }
 
 header {
@@ -39,11 +89,13 @@ header {
     width: 100%;
     height: 7.5rem;
     z-index: 100;
-    background-color: var(--header-bg-color);
+    background: var(--header-bg-color);
 }
 
 body {
     font-family: "Nanum Gothic", sans-serif;
+    color : var(--default-font-color);
+    background-color: var(--main-bg-color);
 }
 
 /*Font Setting*/
@@ -65,6 +117,12 @@ body {
    font-family: "Lora", serif;
    font-optical-sizing: auto;
    font-style: normal;
+}
+
+.libre-bodoni {
+    font-family: "Libre Bodoni", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .font-size-24 {
@@ -118,9 +176,9 @@ body {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #212529;
+    color: var(--table-color);
     vertical-align: top;
-    border-color: #595959;
+    border-color: var(--table-border-color);
 }
 
 .table.fixed-layout {
@@ -237,10 +295,11 @@ section#home {
     justify-content: center;
     align-items: center;
 
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/home.jpeg?raw=true");
-    background-repeat : no-repeat;
-    background-position: center;
-    background-size : cover;
+    /*background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/home.jpeg?raw=true");*/
+    /*background-repeat : no-repeat;*/
+    /*background-position: center;*/
+    /*background-size : cover;*/
+    background: var(--gradient-main-bg-color);
 }
 
 section#home > .main-profile {
@@ -261,8 +320,18 @@ section#home > .main-profile {
 section#home > .main-profile > .main-profile-title {
     font-size: 128px;
     font-weight: bold;
-    color: var(--main-profile-title);
+    color: var(--white-color)
 }
+
+/*section#home > .main-profile > .main-profile-title > .white-color {*/
+
+/*}*/
+
+section#home > .main-profile > .main-profile-title > .black-color {
+    -webkit-text-stroke: 2px var(--white-color);
+    color: var(--black-color)
+}
+
 
 section#home > .main-profile > .title-line {
     border: 3px solid var(--main-area-border);
@@ -314,7 +383,7 @@ section#home > .sub-profile > .sub-profile-block {
 
 section#home > .sub-profile > .sub-profile-block > .sub-profile-picture {
     border-radius: 15px;
-    border: 5px solid var(--black-color);
+    border: 5px solid var(--picture-border);
     height: 15rem;
     width: 180px;
 }
@@ -437,7 +506,7 @@ section.wrap-info > section#skills .info-area-detail-block > .info-area-title-bl
 }
 
 section.wrap-info > section#skills .info-area-detail-block > .skill-detail {
-    background-color: var(--white-half-transparent-color);
+    background-color: var(--table-bg-color);
     padding: 1.5rem;
     width: 100%;
     /*height: fit-content;*/
@@ -459,7 +528,7 @@ section.wrap-info > section#skills table td {
 .level-container {
     min-width: 250px;
     max-width: 100%;
-    background: #ddd;
+    background: var(--skill-level-container-color);
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -473,7 +542,7 @@ section.wrap-info > section#skills table td {
     z-index: 1;
     text-align: center;
     line-height: 21px;
-    color: white;
+    color: var(--white-75p-transparent-color);
     font-weight: bold;
     transition: width 0.3s ease-in-out;
     border-radius: 20px 0 0 20px; /* 왼쪽 모서리만 둥글게 */
@@ -501,7 +570,7 @@ section.wrap-info > section#skills table td {
 .marker {
     width: 2px;
     height: 100%;
-    background: white;
+    background: var(--skill-level-marker-color);
     opacity: 0.8;
 }
 
