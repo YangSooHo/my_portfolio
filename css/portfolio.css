@@ -44,7 +44,7 @@ header {
     height: 7.5rem;
     z-index: 100;
     background-color: var(--header-bg-color);
-    background: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/layout/header_layout.png");
+    background: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/layout/header_layout.png?raw=true");
     background-repeat: repeat-x;
     background-position: center;
 
