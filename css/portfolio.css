@@ -351,8 +351,8 @@ section#home > .main-profile {
 section#home > .main-profile > .main-profile-title {
     font-size: 128px;
     font-weight: bold;
-    color: var(--white-color);
-    -webkit-text-stroke: 6px var(--main-profile-title);
+    color: var(--main-profile-title);
+    -webkit-text-stroke: 6px var(--white-color);
 }
 
 section#home > .main-profile > .title-line {
