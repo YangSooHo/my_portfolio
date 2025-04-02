@@ -510,7 +510,7 @@ section.wrap-info > section.info-area > .info-area-block {
 section.wrap-info > section#skills {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/skills2.png?raw=true");
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 }
 
 section.wrap-info > section#skills .info-area-detail-block {
@@ -603,7 +603,7 @@ section.wrap-info > section#skills table td {
 section.wrap-info > section#experience {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/experience2.png?raw=true");
     background-position: center center;
-    background-repeat : no-repeat;
+    background-repeat : repeat;
 }
 
 section.wrap-info > section#experience .info-area-list-container > .list-container-title {
@@ -643,7 +643,7 @@ section.wrap-info > section#experience .info-area-list-container .info-area-list
 section.wrap-info > section#projects {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/projects2.png?raw=true");
     background-position: center center;
-    background-repeat : no-repeat;
+    background-repeat : repeat;
 
     display: flex;
     justify-content: center;
@@ -854,7 +854,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
 section.wrap-info > section#reference {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/reference2.png?raw=true");
     background-position: center center;
-    background-repeat : no-repeat;
+    background-repeat : repeat;
 }
 
 section.wrap-info > section#reference .info-area-reference-block > .list-reference-title {
