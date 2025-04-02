@@ -314,7 +314,7 @@ a:link {
 
 header > .menu-div > nav > ul.toc > li:hover > a,
 header > .menu-div > nav > ul.toc > li.active > a {
-    color: var(--black-half-transparent-color);
+    color: var(--white-half-transparent-color);
     -webkit-text-stroke: 3px var(--header-active-color);
 
     background-color: var(--black-half-transparent-color);
