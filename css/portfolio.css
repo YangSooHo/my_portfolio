@@ -73,6 +73,8 @@
     --btn-main-color: #ECDFCC;
     --btn-main-active-color: #3C3D37;
 
+    --btn-hover-color: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+
     /* common */
     --white-color: #FFFFFF;
     --white-half-transparent-color: #FFFFFF7F;
@@ -80,6 +82,7 @@
     --black-half-transparent-color: #00000080;
 
     --light-shadow-color : rgba(202, 202, 202, 0.6);
+    --dark-shadow-color : rgba(43, 43, 43, 0.6);
 
     /* footer */
     --footer-bg-color: #080808;
@@ -506,7 +509,7 @@ section.wrap-info > section.info-area > .info-area-block {
 
 /* Skills */
 section.wrap-info > section#skills {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/skills.png?raw=true");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/skills2.png?raw=true");
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -599,7 +602,7 @@ section.wrap-info > section#skills table td {
 
 /* Experience */
 section.wrap-info > section#experience {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/experience.png?raw=true");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/experience2.png?raw=true");
     background-position: center center;
     background-repeat : no-repeat;
 }
@@ -639,7 +642,7 @@ section.wrap-info > section#experience .info-area-list-container .info-area-list
 }
 
 section.wrap-info > section#projects {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/projects.png?raw=true");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/projects2.png?raw=true");
     background-position: center center;
     background-repeat : no-repeat;
 
@@ -738,6 +741,11 @@ section.wrap-info > section#projects .nav-btn {
     -webkit-box-shadow: 0 5px 12px 1px var(--light-shadow-color);
     -moz-box-shadow: 0 5px 12px 1px var(--light-shadow-color);
 }
+
+section.wrap-info > section#projects .nav-btn:hover {
+    background-image: var(--btn-hover-color);
+}
+
 section.wrap-info > section#projects .nav-btn:disabled {
     background: #ccc;
     color: var(--disabled-color);
@@ -845,7 +853,7 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
 }
 
 section.wrap-info > section#reference {
-    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/reference.png?raw=true");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/reference2.png?raw=true");
     background-position: center center;
     background-repeat : no-repeat;
 }
