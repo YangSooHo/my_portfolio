@@ -865,7 +865,7 @@ section.wrap-info > section#reference .info-area-reference-block > .list-referen
 section.wrap-info > section#reference .info-area-reference-block {
     border-top:  3px solid var(--main-area-border);
     border-bottom:  3px solid var(--main-area-border);
-    background: var(--white-half-transparent-color);
+    background: var(--black-half-transparent-color);
     padding: 3rem;
     display: flex;
     flex-flow: column nowrap;
