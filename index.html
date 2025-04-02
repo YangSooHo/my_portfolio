@@ -46,6 +46,11 @@
       const isMobile = /Android|iPhone/i.test(navigator.userAgent);
       const html = $(`#${container} .${name}`).html();
 
+      const root = document.documentElement;
+      const bgColor = getComputedStyle(root).getPropertyValue('--main-bg-color').trim();
+      const btnColor = getComputedStyle(root).getPropertyValue('--btn-modal-color').trim();
+      const fontColor = getComputedStyle(root).getPropertyValue('--white-color').trim();
+
       Swal.fire({
         title: `<i class="fas fa-check-square"></i> ${title}`,
         width: isMobile?'80%':1000,
@@ -54,8 +59,9 @@
                 ${html}
             </div>
         `,
-        background: 'rgb(255 249 236)',
-        confirmButtonColor: '#eabd13',
+        color: fontColor,
+        background: bgColor,
+        confirmButtonColor: btnColor,
         showClass: {popup: `animate__animated animate__fadeIn animate__faster`},
         hideClass: {popup: `animate__animated animate__fadeOut animate__faster`}
       })
@@ -65,7 +71,12 @@
 
   <style>
     .swal2-title {
-      color: var(--main-profile-title);)
+      color: var(--modal-title);
+    }
+
+    .swal2-confirm {
+      color: var(--btn-modal-label-color);
+      font-weight: bold;
     }
 
     span.feed-line:before {
