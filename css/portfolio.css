@@ -40,7 +40,7 @@
     --header-color: #ECDFCC;
     --header-active-color: var(--white-half-transparent-color);
 
-    --skill-level-color: #697565;
+    --skill-level-color: #ECDFCC;
 
     /* title color */
     --modal-title: #ECDFCC;
@@ -567,7 +567,7 @@ section.wrap-info > section#skills table td {
     z-index: 1;
     text-align: center;
     line-height: 21px;
-    color: white;
+    color: var(--black-color);
     font-weight: bold;
     transition: width 0.3s ease-in-out;
     border-radius: 20px 0 0 20px; /* 왼쪽 모서리만 둥글게 */
@@ -595,7 +595,7 @@ section.wrap-info > section#skills table td {
 .marker {
     width: 2px;
     height: 100%;
-    background: white;
+    background: var(--black-half-transparent-color);
     opacity: 0.8;
 }
 
