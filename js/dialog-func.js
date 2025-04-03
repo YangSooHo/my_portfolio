@@ -53,25 +53,42 @@ function dialogDiv(title, container, name = null) {
     const fontColor = getComputedStyle(root).getPropertyValue('--white-color').trim();
 
     //Loading Modal
-    Swal.fire({
-        title: "Loading...",
-        allowOutsideClick: false,
-        color: fontColor,
-        background: bgColor,
-        confirmButtonColor: btnColor,
-        didOpen: () => {
-            Swal.showLoading(); // 로딩 애니메이션 실행
-        }
-    });
-
-    //Did Modal
-    const img = new Image();
-    img.src = skillMap[title];
-    img.width = 256;
-    img.alt = title;
-    img.onload = function () {
+    if(isLogo) {
         Swal.fire({
-            title: isLogo ? img : `<i class="fas fa-check-square"></i> ${title}`,
+            title: "Loading...",
+            allowOutsideClick: false,
+            color: fontColor,
+            background: bgColor,
+            confirmButtonColor: btnColor,
+            didOpen: () => {
+                Swal.showLoading(); // 로딩 애니메이션 실행
+            }
+        });
+
+        //Did Modal
+        const img = new Image();
+        img.src = skillMap[title];
+        img.width = 256;
+        img.alt = title;
+        img.onload = function () {
+            Swal.fire({
+                title: img,
+                width: isMobile?'80%': 1000,
+                html: `
+            <div class="alert-container">
+                ${html}
+            </div>
+        `,
+                color: fontColor,
+                background: bgColor,
+                confirmButtonColor: btnColor,
+                showClass: {popup: `animate__animated animate__fadeIn animate__faster`},
+                hideClass: {popup: `animate__animated animate__fadeOut animate__faster`}
+            })
+        }
+    } else {
+        Swal.fire({
+            title: `<i class="fas fa-check-square"></i> ${title}`,
             width: isMobile?'80%': 1000,
             html: `
             <div class="alert-container">
@@ -83,6 +100,5 @@ function dialogDiv(title, container, name = null) {
             confirmButtonColor: btnColor,
             showClass: {popup: `animate__animated animate__fadeIn animate__faster`},
             hideClass: {popup: `animate__animated animate__fadeOut animate__faster`}
-        })
     }
 }
