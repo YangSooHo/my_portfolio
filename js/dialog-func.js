@@ -41,7 +41,7 @@ const skillMap = {
 function dialogDiv(title, container, name = null) {
     const isMobile = /Android|iPhone/i.test(navigator.userAgent);
 
-    const html = name === null ? $(container).html() : $(`#${container} .${name}`).html();
+    const html = name === null ? $(container).html() : $(`#${container} .${name}`).prop("outerHTML");
     const isLogo = Object.keys(skillMap).includes(title);
 
     // const skillShowAnimate = 'animate__animated animate__fadeInBottomLeft animate__faster'
@@ -89,7 +89,7 @@ function dialogDiv(title, container, name = null) {
     } else {
         Swal.fire({
             title: `<i class="fas fa-check-square"></i> ${title}`,
-            width: isMobile?'80%': 1000,
+            width: isMobile ? '80%' : 1000,
             html: `
             <div class="alert-container">
                 ${html}
@@ -100,5 +100,6 @@ function dialogDiv(title, container, name = null) {
             confirmButtonColor: btnColor,
             showClass: {popup: `animate__animated animate__fadeIn animate__faster`},
             hideClass: {popup: `animate__animated animate__fadeOut animate__faster`}
+        })
     }
 }
