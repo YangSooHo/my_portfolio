@@ -2,42 +2,51 @@
 const skillMap = {
 
     // Back End
-    'java': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/java-logo.png?raw=true" width="256" height="auto" alt="java" />',
-    'spring-boot': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/spring-boot-logo.png?raw=true" width="256" height="auto" alt="spring-boot" />',
-    'python': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/python-logo.png?raw=true" width="256" height="auto" alt="python" />',
+    'java': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/java-logo.png?raw=true',
+    'spring-boot': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/spring-boot-logo.png?raw=true',
+    'python': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/python-logo.png?raw=true',
 
     // Front End
-    'css': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/css-logo.png?raw=true" width="256" height="auto" alt="css" />',
-    'javascript': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/javascript-logo.png?raw=true" width="256" height="auto" alt="javascript" />',
-    'jsp': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/jsp-logo.png?raw=true" width="256" height="auto" alt="jsp" />',
-    'apache-freemarker': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/freemarker-logo.png?raw=true" width="256" height="auto" alt="apache-freemarker" />',
-    'thymeleaf': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/thymeleaf-logo.png?raw=true" width="256" height="auto" alt="thymeleaf" />',
-    'react-js': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/react-js-logo.png?raw=true" width="256" height="auto" alt="react-js" />',
+    'css': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/css-logo.png?raw=true',
+    'javascript': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/javascript-logo.png?raw=true',
+    'jsp': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/jsp-logo.png?raw=true',
+    'apache-freemarker': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/freemarker-logo.png?raw=true',
+    'thymeleaf': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/thymeleaf-logo.png?raw=true',
+    'react-js': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/react-js-logo.png?raw=true',
 
     //Database
-    'sql-server': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/sql-server-logo.png?raw=true" width="256" height="auto" alt="sql-server" />',
-    'my-sql': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/my-sql-logo.png?raw=true" width="256" height="auto" alt="my-sql" />',
-    'mongo-db': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/mongo-db-logo.png?raw=true" width="256" height="auto" alt="mongo-db" />',
-    'h2-database': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/h2-database-logo.png?raw=true" width="256" height="auto" alt="h2" />',
+    'sql-server': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/sql-server-logo.png?raw=true',
+    'my-sql': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/my-sql-logo.png?raw=true',
+    'mongo-db': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/mongo-db-logo.png?raw=true',
+    'h2-database': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/h2-database-logo.png?raw=true',
 
     //Server
-    'apache-tomcat': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/apache-tomcat-logo.png?raw=true" width="256" height="auto" alt="apache-tomcat" />',
-    'redis-server': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/redis-server-logo.png?raw=true" width="256" height="auto" alt="redis-server" />',
-    'nginx': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/nginx-logo.png?raw=true" width="256" height="auto" alt="nginx" />',
-    'ms-azure': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/ms-azure-logo.png?raw=true" width="256" height="auto" alt="ms-azure" />',
+    'apache-tomcat': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/apache-tomcat-logo.png?raw=true',
+    'redis-server': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/redis-server-logo.png?raw=true',
+    'nginx': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/nginx-logo.png?raw=true',
+    'ms-azure': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/ms-azure-logo.png?raw=true',
 
     //IDE
-    'git': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/git-logo.png?raw=true" width="256" height="auto" alt="git" />',
-    'docker': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/docker-logo.png?raw=true" width="256" height="auto" alt="docker" />',
-    'redmine': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/redmine-logo.png?raw=true" width="256" height="auto" alt="redmine" />',
-    'atlassian': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/atlassian-logo.png?raw=true" width="256" height="auto" alt="atlassian" />',
-    'notion': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/notion-logo.png?raw=true" width="256" height="auto" alt="notion" />',
-    'intellij': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/intellij-logo.png?raw=true" width="256" height="auto" alt="intellij" />',
-    'vscode': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/vs-code-logo.png?raw=true" width="256" height="auto" alt="vscode" />',
-    'eclipse': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/eclipse-logo.png?raw=true" width="256" height="auto" alt="eclipse" />',
-    'figma': '<img src="https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/figma-logo.png?raw=true" width="256" height="auto" alt="figma" />',
-
+    'git': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/git-logo.png?raw=true',
+    'docker': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/docker-logo.png?raw=true',
+    'redmine': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/redmine-logo.png?raw=true',
+    'atlassian': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/atlassian-logo.png?raw=true',
+    'notion': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/notion-logo.png?raw=true',
+    'intellij': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/intellij-logo.png?raw=true',
+    'vscode': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/vs-code-logo.png?raw=true',
+    'eclipse': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/eclipse-logo.png?raw=true',
+    'figma': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/figma-logo.png?raw=true',
 }
+
+//Image Loading
+Object.keys(skillMap).forEach((imgKey) => {
+    const img = new Image();
+   img.src = skillMap[imgKey];
+   img.width = 256;
+   img.height = 'auto';
+   img.alt = imgKey;
+   skillMap[imgKey] = img;
+});
 
 function dialogDiv(title, container, name = null) {
     const isMobile = /Android|iPhone/i.test(navigator.userAgent);
