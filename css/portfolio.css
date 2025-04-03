@@ -551,7 +551,7 @@ section.wrap-info > section.info-area > .info-area-block {
     border: 3px solid var(--main-area-border);
     background: var(--main-bg-color-half-transparent);
     padding: 1rem;
-    /*margin-top: 7.5rem;*/
+    margin-top: 7.5rem;
     width: 80vw;
     height: 75%;
 
@@ -635,11 +635,13 @@ section.wrap-info > section#skills table td {
 }
 
 .level-bar-explain-container {
-    margin-top: 6rem;
-    margin-bottom: 0.5rem;
+    /*margin-top: 6rem;*/
+    /*margin-bottom: 0.5rem;*/
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 8rem;
 }
 
 .level-bar-explain-container > .level-bar-sample {
