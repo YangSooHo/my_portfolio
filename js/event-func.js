@@ -3,6 +3,7 @@ $(function () {
     /**
      * Menu Click Event
      */
+    const home = $("#home");
     const sections = $("#home, .wrap-info .info-area");
     const wrapInfo = $("#home, .wrap-info");
     const infoAreaBlockList = $(".info-area > .info-area-block");
@@ -95,27 +96,6 @@ $(function () {
                     scrollEnabled = false;
                 }
             })
-
-            // 터치 이벤트 (모바일)
-            let startY = 0;
-            let isEnd = false;
-            let isStart = false;
-            $(infoAreaBlock).on("touchstart", function (event) {
-                startY = event.touches[0].clientY;
-                const target = event.currentTarget;
-                isStart = target.scrollTop > 0;
-                isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
-            });
-
-            $(infoAreaBlock).on("touchend", function (event) {
-                let endY = event.changedTouches[0].clientY;
-                let deltaY = startY - endY;
-
-                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-                if ((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
-                    scrollEnabled = false;
-                }
-            });
         });
 
         $.each(stepProjectPictureList, function (idx, stepProjectPicture) {
@@ -125,28 +105,6 @@ $(function () {
                     scrollEnabled = false;
                 }
             })
-
-            // 터치 이벤트 (모바일)
-            let startY = 0;
-            let isEnd = false;
-            let isStart = false;
-
-            $(stepProjectPicture).on("touchstart", function (event) {
-                startY = event.touches[0].clientY;
-                const target = event.currentTarget;
-                isStart = target.scrollTop > 0;
-                isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
-            });
-
-            $(stepProjectPicture).on("touchend", function (event) {
-                let endY = event.changedTouches[0].clientY;
-                let deltaY = startY - endY;
-
-                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-                if ((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
-                    scrollEnabled = false;
-                }
-            });
         })
 
         $.each(stepProjectDetailList, function (idx, stepProjectDetail) {
@@ -156,28 +114,6 @@ $(function () {
                     scrollEnabled = false;
                 }
             })
-
-            // 터치 이벤트 (모바일)
-            let startY = 0;
-            let isEnd = false;
-            let isStart = false;
-
-            $(stepProjectDetail).on("touchstart", function (event) {
-                startY = event.touches[0].clientY;
-                const target = event.currentTarget;
-                isStart = target.scrollTop > 0;
-                isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
-            });
-
-            $(stepProjectDetail).on("touchend", function (event) {
-                let endY = event.changedTouches[0].clientY;
-                let deltaY = startY - endY;
-
-                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-                if ((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
-                    scrollEnabled = false;
-                }
-            });
         })
 
         $.each(stepProjectList, function (idx, stepProject) {
@@ -187,30 +123,17 @@ $(function () {
                     scrollEnabled = false;
                 }
             })
-
-            // 터치 이벤트 (모바일)
-            let startY = 0;
-            let isEnd = false;
-            let isStart = false;
-
-            $(stepProject).on("touchstart", function (event) {
-                startY = event.touches[0].clientY;
-                const target = event.currentTarget;
-                isStart = target.scrollTop > 0;
-                isEnd = (target.clientHeight + target.scrollTop < target.scrollHeight);
-            });
-
-            $(stepProject).on("touchend", function (event) {
-                let endY = event.changedTouches[0].clientY;
-                let deltaY = startY - endY;
-
-                // Scroll이 최상단이 아닐 때, Scroll을 위로 굴렷거나 / 아래로 굴렸을 때, 스크롤 최대치가 아니면 아래 wheel event 취소.
-                if ((deltaY < 0 && isStart) || (deltaY > 0 && isEnd)) {
-                    scrollEnabled = false;
-                }
-            });
         })
 
+        home.on("mousewheel DOMMouseScroll", function (event) {
+            const target = event.currentTarget;
+            const scrollTop = document.scrollingElement.scrollTop;
+            const browserHeight = $(window).height();
+
+            if (event.originalEvent.deltaY > 0 && (scrollTop + browserHeight) < target.scrollHeight) {
+                scrollEnabled = false;
+            }
+        });
 
         // 마우스 휠 이벤트 (데스크탑)
         wrapInfo.on("mousewheel DOMMouseScroll", function (event) {
@@ -223,27 +146,6 @@ $(function () {
                 scrollToSection(currentIndex + 1);
             } else if (event.originalEvent.deltaY < 0) {
                 scrollToSection(currentIndex - 1);
-            }
-        });
-
-        // 터치 이벤트 (모바일)
-        let startY = 0;
-        wrapInfo.on("touchstart", function (event) {
-            startY = event.touches[0].clientY;
-        });
-
-        wrapInfo.on("touchend", function (event) {
-            let endY = event.changedTouches[0].clientY;
-            let deltaY = startY - endY;
-
-            let moveHeight = (event.view.screen.height / 3) * 2
-
-            if (deltaY > moveHeight) {
-                scrollToSection(currentIndex + 1); // 아래로 스크롤
-            } else if (deltaY < -moveHeight) {
-                scrollToSection(currentIndex - 1); // 위로 스크롤
-            } else {
-                scrollToSection(currentIndex); // 제자리로 이동
             }
         });
 
