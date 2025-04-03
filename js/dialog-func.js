@@ -43,7 +43,6 @@ Object.keys(skillMap).forEach((imgKey) => {
     const img = new Image();
    img.src = skillMap[imgKey];
    img.width = 256;
-   img.height = 'auto';
    img.alt = imgKey;
    skillMap[imgKey] = img;
 });
@@ -63,7 +62,7 @@ function dialogDiv(title, container, name = null) {
     const fontColor = getComputedStyle(root).getPropertyValue('--white-color').trim();
 
     Swal.fire({
-        title: isLogo ? `${skillMap[title]}` : `<i class="fas fa-check-square"></i> ${title}`,
+        title: isLogo ? skillMap[title] : `<i class="fas fa-check-square"></i> ${title}`,
         width: isMobile?'80%': 1000,
         html: `
             <div class="alert-container">
