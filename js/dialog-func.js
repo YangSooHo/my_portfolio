@@ -38,15 +38,6 @@ const skillMap = {
     'figma': 'https://github.com/YangSooHo/my_portfolio/blob/main/images/skill/figma-logo.png?raw=true',
 }
 
-//Image Loading
-Object.keys(skillMap).forEach((imgKey) => {
-    const img = new Image();
-   img.src = skillMap[imgKey];
-   img.width = 256;
-   img.alt = imgKey;
-   skillMap[imgKey] = img;
-});
-
 function dialogDiv(title, container, name = null) {
     const isMobile = /Android|iPhone/i.test(navigator.userAgent);
 
@@ -61,18 +52,37 @@ function dialogDiv(title, container, name = null) {
     const btnColor = getComputedStyle(root).getPropertyValue('--btn-modal-color').trim();
     const fontColor = getComputedStyle(root).getPropertyValue('--white-color').trim();
 
+    //Loading Modal
     Swal.fire({
-        title: isLogo ? skillMap[title] : `<i class="fas fa-check-square"></i> ${title}`,
-        width: isMobile?'80%': 1000,
-        html: `
+        title: "Loading...",
+        allowOutsideClick: false,
+        color: fontColor,
+        background: bgColor,
+        confirmButtonColor: btnColor,
+        didOpen: () => {
+            Swal.showLoading(); // 로딩 애니메이션 실행
+        }
+    });
+
+    //Did Modal
+    const img = new Image();
+    img.src = skillMap[title];
+    img.width = 256;
+    img.alt = title;
+    img.onload = function () {
+        Swal.fire({
+            title: isLogo ? img : `<i class="fas fa-check-square"></i> ${title}`,
+            width: isMobile?'80%': 1000,
+            html: `
             <div class="alert-container">
                 ${html}
             </div>
         `,
-        color: fontColor,
-        background: bgColor,
-        confirmButtonColor: btnColor,
-        showClass: {popup: `animate__animated animate__fadeIn animate__faster`},
-        hideClass: {popup: `animate__animated animate__fadeOut animate__faster`}
-    })
+            color: fontColor,
+            background: bgColor,
+            confirmButtonColor: btnColor,
+            showClass: {popup: `animate__animated animate__fadeIn animate__faster`},
+            hideClass: {popup: `animate__animated animate__fadeOut animate__faster`}
+        })
+    }
 }
