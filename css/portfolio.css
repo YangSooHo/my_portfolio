@@ -751,6 +751,10 @@ section.wrap-info > section#projects {
     align-items: center;
 }
 
+section.wrap-info > section#projects > .info-area-block {
+    justify-content: start !important;
+}
+
 /* Wizard */
 section.wrap-info > section#projects .wizard {
     width: 100%;
@@ -937,6 +941,24 @@ section.wrap-info > section#projects .step-project > .step-project-content > .st
     flex: 1;
     white-space: pre-line;
     padding: 0.5rem;
+}
+
+section.wrap-info > section#projects .tab-container {
+    color: var(--black-color);
+    cursor: pointer;
+    margin-bottom: -1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+section.wrap-info > section#projects .tab-container > .btn {
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid var(--main-area-border);
+    font-size: 21px;
+    line-height: 21px;
 }
 
 section.wrap-info > section#projects .step-project > .step-project-content > .step-project-content-detail > .step-project-content-footer {

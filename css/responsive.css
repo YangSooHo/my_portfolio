@@ -12,6 +12,9 @@
         top: 2.5% !important;
     }
 
+    section.wrap-info > section#projects .tab-container > .btn {
+        padding: 5px;
+    }
 }
 
 

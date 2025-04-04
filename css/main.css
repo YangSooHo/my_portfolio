@@ -62,7 +62,7 @@ footer {
     background-color: var(--btn-color);
 }
 
-.btn:hover {
+.btn.active, .btn:hover {
     color: white;
     background-color: var(--btn-active-color);
 }
@@ -71,6 +71,6 @@ footer {
     background-color: var(--btn-main-color) !important;
 }
 
-.btn.btn-main:hover {
+.btn.btn-main.active, .btn.btn-main:hover {
     background-color: var(--btn-main-active-color) !important;
 }

@@ -8,6 +8,8 @@ $(function () {
     const firstBtn = document.getElementById("firstBtn");
     const lastBtn = document.getElementById("lastBtn");
 
+    const tabBtns = document.querySelectorAll(".tab-container > .btn-main");
+
     function updateSteps() {
         steps.forEach((step, index) => {
             step.classList.remove("active", "hidden-left", "hidden-right");
@@ -21,6 +23,19 @@ $(function () {
             }
         });
 
+
+        //Button 설정
+        tabBtns.forEach(function(tabBtn) {
+            if(tabBtn.classList.contains("active")) {
+                tabBtn.classList.remove("active");
+            }
+
+            if(parseInt(tabBtn.dataset.idx) === currentStep) {
+                tabBtn.classList.add("active");
+            }
+        })
+
+        //Disable 설정
         prevBtn.disabled = currentStep === 0;
         firstBtn.disabled = currentStep === 0;
         nextBtn.disabled = currentStep === totalSteps - 1;
@@ -55,6 +70,14 @@ $(function () {
             updateSteps();
         }
     });
+
+
+    tabBtns.forEach(function(tabBtn) {
+        tabBtn.addEventListener("click", function () {
+            currentStep = parseInt(tabBtn.dataset.idx);
+            updateSteps();
+        })
+    })
 
     updateSteps(); // 초기 상태 설정
 });
