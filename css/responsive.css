@@ -7,6 +7,11 @@
     section.wrap-info > section.info-area > .info-area-block {
         margin-top: 1.5rem !important;
     }
+
+    .level-bar-explain-container {
+        top: 2.5% !important;
+    }
+
 }
 
 
