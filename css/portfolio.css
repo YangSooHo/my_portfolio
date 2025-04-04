@@ -696,6 +696,10 @@ section.wrap-info > section#skills table td {
     opacity: 0.8;
 }
 
+.marker:first-child, .marker:last-child{
+    width: 0 !important;
+}
+
 /* Experience */
 section.wrap-info > section#experience {
     background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/background/experience2.png?raw=true");
