@@ -1,41 +1,4 @@
 :root {
-    /*--header-bg-color: #ffe495;*/
-    /*--header-color: #f9d9a4;*/
-    /*--header-active-color: #F12929;*/
-
-    /*--main-area-border: #EDC290;*/
-    /*--main-profile-title: #F1A42F;*/
-    /*--main-bg-color: #FFFDDF;*/
-
-    /*--main-bg-color-half-transparent: rgba(255, 253, 223, 0.6);*/
-
-    /*--sub-profile-grid-border: #F1A42F;*/
-    /*--sub-profile-grid-bg-color: rgba(255, 255, 255, 0.7);*/
-    /*--content-block-border: rgba(0,0,0,0.25);*/
-    /*--wizard-step-btn-color: #ffeba7;*/
-
-    /*--wrap-info-bg-color: #FFE499;*/
-    /*--info-area-bg-color: #fef8e4;*/
-
-    /*--footer-bg-color: #080808;*/
-    /*--footer-reference-bg-color: #393939;*/
-    /*--footer-block-border: #2b2b2b;*/
-    /*--footer-text-color: #898989;*/
-
-    /*--btn-color: #e1e1e1;*/
-    /*--btn-active-color: #7a7a7a;*/
-    /*--btn-main-color: #f9d9a4;*/
-    /*--btn-main-active-color: #edae19;*/
-
-    /*--white-color: #FFFFFF;*/
-    /*--white-half-transparent-color: #FFFFFF7F;*/
-    /*--black-color: #000000;*/
-    /*--black-half-transparent-color: #00000080;*/
-
-    /*--light-shadow-color : #91919198;*/
-
-    /*--skill-level-color: #F1A42FA5;*/
-
     /* normal color */
     --header-color: var(--black-color);
     --header-active-color: var(--white-color);
@@ -467,6 +430,11 @@ section#home > .sub-profile > .sub-profile-block > .sub-profile-picture {
     border: 5px solid var(--picture-border);
     height: 15rem;
     width: 180px;
+
+    background-image: url("/images/profile/portfolio_profile.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 section#home > .sub-profile > .sub-profile-block > .sub-profile-title-block {
@@ -713,12 +681,11 @@ section.wrap-info > section#experience .info-area-list-container > .list-contain
 }
 
 section.wrap-info > section#experience .info-area-list-container {
+    background: var(--black-half-transparent-color);
     border-top:  3px solid var(--main-area-border);
     border-bottom:  3px solid var(--main-area-border);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 45%;
-    flex:1;
+    width: 45rem;
+    padding: 1rem;
 }
 
 
