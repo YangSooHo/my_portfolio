@@ -431,7 +431,7 @@ section#home > .sub-profile > .sub-profile-block > .sub-profile-picture {
     height: 15rem;
     width: 180px;
 
-    background-image: url("/images/profile/portfolio_profile.jpg");
+    background-image: url("https://github.com/YangSooHo/my_portfolio/blob/main/images/profile/portfolio_profile.jpg?raw=true");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
